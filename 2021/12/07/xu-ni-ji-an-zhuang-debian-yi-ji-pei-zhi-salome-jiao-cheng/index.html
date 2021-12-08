@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="虚拟机安装Debian以及配置SALOME教程, 小罗的博客">
+    <meta name="keywords" content="虚拟机安装Debian以及配置SALOME教程, Xiao Luo">
     <meta name="description" content="date: 2021-12-05 20:35:00本文为Linux系统Debian8.0的安装以及开源多物理场耦合平台SALOME的配置教程。
 一、准备文件1. 虚拟机使用VirtualBox--版本5.2，不建议使用最新版本
    下载链">
@@ -19,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>虚拟机安装Debian以及配置SALOME教程 | 小罗的博客</title>
+    <title>虚拟机安装Debian以及配置SALOME教程 | Xiao Luo</title>
     <link rel="icon" type="image/png" href="/Mrluo123.http-github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/Mrluo123.http-github.io/libs/awesome/css/all.min.css">
@@ -48,7 +48,7 @@
                     
                     <img src="/Mrluo123.http-github.io/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">小罗的博客</span>
+                    <span class="logo-span">Xiao Luo</span>
                 </a>
             </div>
             
@@ -147,7 +147,7 @@
         
         <img src="/Mrluo123.http-github.io/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">小罗的博客</div>
+        <div class="logo-name">Xiao Luo</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -494,10 +494,10 @@
 <li>首先需将SALOME安装包放到windows共享文件夹下面<br> <img src="https://img-blog.csdnimg.cn/20200609190054859.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
 <li>然后进入虚拟机系统，创建一个文件夹，并将共享文件夹挂载到该文件夹：<br> 依次 输入命令如下：</li>
 </ol>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su<span class="comment">//进入root用户</span></span><br><span class="line">mkdir luoxiaoshare<span class="comment">//创建文件</span></span><br><span class="line">mount  -t  vboxsf  VMshares luoxiaoshare<span class="comment">//VMshares即win下的共享文件夹</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su<span class="comment">//进入root用户</span></span><br><span class="line">mkdir luoxiaoshare<span class="comment">//创建文件</span></span><br><span class="line">mount  -t  vboxsf  VMshares luoxiaoshare<span class="comment">//VMshares即win下的共享文件夹</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>挂载成功，可以在luoxiaoshare下看到共享文件夹的内容：<br><img src="https://img-blog.csdnimg.cn/20200609191046607.png" alt="在这里插入图片描述"><br>然后将SALOME安装包复制到linux某一文件夹，使用命令</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/luoxiao/salome9<span class="number">.2</span>          <span class="comment">//可以自行设置，放在哪里都可以</span></span><br><span class="line">cp -i SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC.tgz /home/luoxiao/salome9<span class="number">.2</span>/  <span class="comment">//复制安装包</span></span><br><span class="line">mkdir SALOMEfiles <span class="comment">//准备解压文件夹</span></span><br><span class="line">tar zxvf SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC.tgz  -C SALOMEfiles/   <span class="comment">//解压后放在该文件夹下</span></span><br><span class="line">cd SALOMEfiles/</span><br><span class="line">cd SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC</span><br><span class="line">./salome   <span class="comment">//可直接运行salome,无需安装</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/luoxiao/salome9<span class="number">.2</span>          <span class="comment">//可以自行设置，放在哪里都可以</span></span><br><span class="line">cp -i SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC.tgz /home/luoxiao/salome9<span class="number">.2</span>/  <span class="comment">//复制安装包</span></span><br><span class="line">mkdir SALOMEfiles <span class="comment">//准备解压文件夹</span></span><br><span class="line">tar zxvf SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC.tgz  -C SALOMEfiles/   <span class="comment">//解压后放在该文件夹下</span></span><br><span class="line">cd SALOMEfiles/</span><br><span class="line">cd SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC</span><br><span class="line">./salome   <span class="comment">//可直接运行salome,无需安装</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
 <p><img src="https://img-blog.csdnimg.cn/20200609191741528.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200609191848388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="运行成功，enjoy！"><a href="#运行成功，enjoy！" class="headerlink" title="运行成功，enjoy！"></a><strong>运行成功，enjoy！</strong></h3>
