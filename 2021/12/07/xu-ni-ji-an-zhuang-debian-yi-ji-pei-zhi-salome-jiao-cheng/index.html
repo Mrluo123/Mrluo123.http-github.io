@@ -468,12 +468,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="date-2021-12-05-20-35-00"><a href="#date-2021-12-05-20-35-00" class="headerlink" title="date: 2021-12-05 20:35:00"></a>date: 2021-12-05 20:35:00</h2><p>本文为Linux系统Debian8.0的安装以及开源多物理场耦合平台SALOME的配置教程。</p>
-<h3 id="一、准备文件"><a href="#一、准备文件" class="headerlink" title="一、准备文件"></a>一、准备文件</h3><pre><code>1. 虚拟机使用VirtualBox--版本5.2，不建议使用最新版本
+<h3 id="一、准备文件"><a href="#一、准备文件" class="headerlink" title="一、准备文件"></a>一、准备文件</h3><pre class=" language-html"><code class="language-html">1. 虚拟机使用VirtualBox--版本5.2，不建议使用最新版本
    下载链接：[VirtualBox官方中文版5.2.26](http://www.xitongtiandi.net/soft_gj/4907.html)
-   ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200609184207789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70)
 2. Debian使用8.0即可，使用新版本需要对应版本的SALOME；
    下载链接可以直接去官网下载:[SALOME官网](https://www.salome-platform.org/)
-
 3. SALOME直接去官网下载，目前使用SALOME9.2版本，仅用于后处理。倘若要使用SALOME的YACS模块，则要使用SALOME8.4版本
 </code></pre>
 <h3 id="二-、Debian安装"><a href="#二-、Debian安装" class="headerlink" title="二 、Debian安装"></a>二 、Debian安装</h3><p>请参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/technologyleader/article/details/81870496">VirtualBox安装Debian教程</a></p>
@@ -494,11 +492,19 @@
 <li>首先需将SALOME安装包放到windows共享文件夹下面<br> <img src="https://img-blog.csdnimg.cn/20200609190054859.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
 <li>然后进入虚拟机系统，创建一个文件夹，并将共享文件夹挂载到该文件夹：<br> 依次 输入命令如下：</li>
 </ol>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su<span class="comment">//进入root用户</span></span><br><span class="line">mkdir luoxiaoshare<span class="comment">//创建文件</span></span><br><span class="line">mount  -t  vboxsf  VMshares luoxiaoshare<span class="comment">//VMshares即win下的共享文件夹</span></span><br></pre></td></tr></tbody></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">su<span class="token comment" spellcheck="true">//进入root用户</span>
+mkdir luoxiaoshare<span class="token comment" spellcheck="true">//创建文件</span>
+mount  <span class="token operator">-</span>t  vboxsf  VMshares luoxiaoshare<span class="token comment" spellcheck="true">//VMshares即win下的共享文件夹</span>
+</code></pre>
 <p>挂载成功，可以在luoxiaoshare下看到共享文件夹的内容：<br><img src="https://img-blog.csdnimg.cn/20200609191046607.png" alt="在这里插入图片描述"><br>然后将SALOME安装包复制到linux某一文件夹，使用命令</p>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/luoxiao/salome9<span class="number">.2</span>          <span class="comment">//可以自行设置，放在哪里都可以</span></span><br><span class="line">cp -i SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC.tgz /home/luoxiao/salome9<span class="number">.2</span>/  <span class="comment">//复制安装包</span></span><br><span class="line">mkdir SALOMEfiles <span class="comment">//准备解压文件夹</span></span><br><span class="line">tar zxvf SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC.tgz  -C SALOMEfiles/   <span class="comment">//解压后放在该文件夹下</span></span><br><span class="line">cd SALOMEfiles/</span><br><span class="line">cd SALOME<span class="number">-9.2</span><span class="number">.0</span>-DB08-SRC</span><br><span class="line">./salome   <span class="comment">//可直接运行salome,无需安装</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
+<pre class=" language-cpp"><code class="language-cpp">mkdir <span class="token operator">/</span>home<span class="token operator">/</span>luoxiao<span class="token operator">/</span>salome9<span class="token number">.2</span>          <span class="token comment" spellcheck="true">//可以自行设置，放在哪里都可以</span>
+cp <span class="token operator">-</span>i SALOME<span class="token number">-9.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>DB08<span class="token operator">-</span>SRC<span class="token punctuation">.</span>tgz <span class="token operator">/</span>home<span class="token operator">/</span>luoxiao<span class="token operator">/</span>salome9<span class="token number">.2</span><span class="token operator">/</span>  <span class="token comment" spellcheck="true">//复制安装包</span>
+mkdir SALOMEfiles <span class="token comment" spellcheck="true">//准备解压文件夹</span>
+tar zxvf SALOME<span class="token number">-9.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>DB08<span class="token operator">-</span>SRC<span class="token punctuation">.</span>tgz  <span class="token operator">-</span>C SALOMEfiles<span class="token operator">/</span>   <span class="token comment" spellcheck="true">//解压后放在该文件夹下</span>
+cd SALOMEfiles<span class="token operator">/</span>
+cd SALOME<span class="token number">-9.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>DB08<span class="token operator">-</span>SRC
+<span class="token punctuation">.</span><span class="token operator">/</span>salome   <span class="token comment" spellcheck="true">//可直接运行salome,无需安装</span>
+</code></pre>
 <p><img src="https://img-blog.csdnimg.cn/20200609191741528.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200609191848388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h3 id="运行成功，enjoy！"><a href="#运行成功，enjoy！" class="headerlink" title="运行成功，enjoy！"></a><strong>运行成功，enjoy！</strong></h3>
                 
