@@ -478,25 +478,25 @@
 <h3 id="三-、安装增强功能以及共享文件夹"><a href="#三-、安装增强功能以及共享文件夹" class="headerlink" title="三 、安装增强功能以及共享文件夹"></a>三 、安装增强功能以及共享文件夹</h3><ul>
 <li>进入Debian系统内，在VirtualBox的菜单栏上，点击Devices- Insert Guest Additions CD image。<br>这样操作不会提示什么信息，但是可以看到下图中光盘。</li>
 </ul>
-<p><img src="https://img-blog.csdnimg.cn/20200609185224904.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200609185224904.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="下载后样式"></p>
 <ul>
 <li> 在命令号窗口里，安装linux-headers-3.16.0-4-amd64、gcc和 make。在root用户下，输入命令：<code>apt-get install linux-headers-3.16.0-4-amd64 gcc make</code></li>
 <li> 在home工作目录下，输入命令ls，查看是否有mnt/文件夹 </li>
 <li> 进入mnt文件夹里，输入命令<code>cd mnt</code>。创建新的文件夹cdrom，输入命令<code>mkdir cdrom</code>。</li>
 <li> 回到上一级目录里，输入命令<code>cd ..</code>。将cd驱动器安装在新建的文件夹里，输入命令<code>mount /dev/cdrom /mnt/cdrom</code>。</li>
 <li> 输入命令<code>cd mnt/cdrom</code>。 输入命令ls，查看在cdrom里的所有文件。</li>
-<li>运行VBoxLinuxAdditions.run。输入命令<code>./ VBoxLinuxAdditions.run</code>. 如果有选项，选择yes. 这个操作的之下需要几分钟。这样VirtualBox增强功能就安装好了。现在输入命令shutdown now关闭虚拟机。<br> <img src="https://img-blog.csdnimg.cn/2020060918524358.png" alt="在这里插入图片描述"></li>
-<li>在Virtualbox 主面板上，选中刚才的系统名字，例如下图中的kanglong。点击Setting-General-Advanced. 修改Shared Clipboard和Drag’n’Drop的设置为Bidirectional. 点击OK. 这将允许在两个系统之间复制文本。<br> <img src="https://img-blog.csdnimg.cn/20200609185253615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>运行VBoxLinuxAdditions.run。输入命令<code>./ VBoxLinuxAdditions.run</code>. 如果有选项，选择yes. 这个操作的之下需要几分钟。这样VirtualBox增强功能就安装好了。现在输入命令shutdown now关闭虚拟机。<br> <img src="https://img-blog.csdnimg.cn/2020060918524358.png" alt="安装过程"></li>
+<li>在Virtualbox 主面板上，选中刚才的系统名字，例如下图中的kanglong。点击Setting-General-Advanced. 修改Shared Clipboard和Drag’n’Drop的设置为Bidirectional. 点击OK. 这将允许在两个系统之间复制文本。<br> <img src="https://img-blog.csdnimg.cn/20200609185253615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="虚拟机设置"></li>
 </ul>
 <h3 id="四、SALOME安装"><a href="#四、SALOME安装" class="headerlink" title="四、SALOME安装"></a>四、SALOME安装</h3><ol>
-<li>首先需将SALOME安装包放到windows共享文件夹下面<br> <img src="https://img-blog.csdnimg.cn/20200609190054859.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>首先需将SALOME安装包放到windows共享文件夹下面<br> <img src="https://img-blog.csdnimg.cn/20200609190054859.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="拷贝到主机目录"></li>
 <li>然后进入虚拟机系统，创建一个文件夹，并将共享文件夹挂载到该文件夹：<br> 依次 输入命令如下：</li>
 </ol>
 <pre class=" language-cpp"><code class="language-cpp">su<span class="token comment" spellcheck="true">//进入root用户</span>
 mkdir luoxiaoshare<span class="token comment" spellcheck="true">//创建文件</span>
 mount  <span class="token operator">-</span>t  vboxsf  VMshares luoxiaoshare<span class="token comment" spellcheck="true">//VMshares即win下的共享文件夹</span>
 </code></pre>
-<p>挂载成功，可以在luoxiaoshare下看到共享文件夹的内容：<br><img src="https://img-blog.csdnimg.cn/20200609191046607.png" alt="在这里插入图片描述"><br>然后将SALOME安装包复制到linux某一文件夹，使用命令</p>
+<p>挂载成功，可以在luoxiaoshare下看到共享文件夹的内容：<br><img src="https://img-blog.csdnimg.cn/20200609191046607.png" alt="可以看到共享文件"><br>然后将SALOME安装包复制到linux某一文件夹，使用命令</p>
 <pre class=" language-cpp"><code class="language-cpp">mkdir <span class="token operator">/</span>home<span class="token operator">/</span>luoxiao<span class="token operator">/</span>salome9<span class="token number">.2</span>          <span class="token comment" spellcheck="true">//可以自行设置，放在哪里都可以</span>
 cp <span class="token operator">-</span>i SALOME<span class="token number">-9.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>DB08<span class="token operator">-</span>SRC<span class="token punctuation">.</span>tgz <span class="token operator">/</span>home<span class="token operator">/</span>luoxiao<span class="token operator">/</span>salome9<span class="token number">.2</span><span class="token operator">/</span>  <span class="token comment" spellcheck="true">//复制安装包</span>
 mkdir SALOMEfiles <span class="token comment" spellcheck="true">//准备解压文件夹</span>
@@ -505,7 +505,7 @@ cd SALOMEfiles<span class="token operator">/</span>
 cd SALOME<span class="token number">-9.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>DB08<span class="token operator">-</span>SRC
 <span class="token punctuation">.</span><span class="token operator">/</span>salome   <span class="token comment" spellcheck="true">//可直接运行salome,无需安装</span>
 </code></pre>
-<p><img src="https://img-blog.csdnimg.cn/20200609191741528.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20200609191848388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200609191741528.png" alt="运行"><br><img src="https://img-blog.csdnimg.cn/20200609191848388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="SALOME打开截图"></p>
 <h3 id="运行成功，enjoy！"><a href="#运行成功，enjoy！" class="headerlink" title="运行成功，enjoy！"></a><strong>运行成功，enjoy！</strong></h3>
                 
             </div>
