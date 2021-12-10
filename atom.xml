@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Xiao Luo</title>
+  
+  <subtitle>小罗的博客</subtitle>
+  <link href="https://mrluo123.github.io/Mrluo123.http-github.io/atom.xml" rel="self"/>
+  
+  <link href="https://mrluo123.github.io/Mrluo123.http-github.io/"/>
+  <updated>2021-12-10T11:53:52.914Z</updated>
+  <id>https://mrluo123.github.io/Mrluo123.http-github.io/</id>
+  
+  <author>
+    <name>Xiao Luo</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Star-CCM+安装教程（Linux)</title>
+    <link href="https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/10/star-ccm-an-zhuang-jiao-cheng-linux/"/>
+    <id>https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/10/star-ccm-an-zhuang-jiao-cheng-linux/</id>
+    <published>2021-12-10T11:51:16.000Z</published>
+    <updated>2021-12-10T11:53:52.914Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="在linux下安装解Star-CCM"><a href="#在linux下安装解Star-CCM" class="headerlink" title="在linux下安装解Star CCM+"></a>在linux下安装解Star CCM+</h2><p><strong>目前网上大多是win上面安装STAR-CCM+ 的教程，关于linux的较少，我这里提供一篇在Ununtu上安装和Pojie的教程，供大家参考一下</strong>。</p><h2 id="1、-所需的文件"><a href="#1、-所需的文件" class="headerlink" title="*1、 所需的文件"></a>*<em>1、 所需的文件</em></h2><p>原版文件和破解文件，如下图所示<br> （下载链接可以留言，看到了会尽快回复）<img src="https://img-blog.csdnimg.cn/20200421110027281.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="2、-首先解压安装文件"><a href="#2、-首先解压安装文件" class="headerlink" title="2、 首先解压安装文件"></a><strong>2、</strong> <strong>首先解压安装文件</strong></h2><p>使用命令 <code>gzip -d STAR-CCM+13.02.011_01_linux-x86_64.tar.gz</code><br>得到如下文件夹<br> <img src="https://img-blog.csdnimg.cn/20200421110120594.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后输入命令<code>./ STAR-CCM+13.02.011_01_linux-x86_64-2.12_gnu6.2.sh</code><br>接下来进入安装界面，步骤和win版本的一样。（网上很容易查到，这里不赘述）<br>等待安装完成后进入破解。<br><img src="https://img-blog.csdnimg.cn/20200421110324393.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id="3、-破解"><a href="#3、-破解" class="headerlink" title="3、 破解"></a><strong>3、 破解</strong></h2><p>解压破解文件，输入命令gzip -d 13.02.011.tar.gz<br>得到文件夹13.02.011，将其复制到安装目录下替换<br> <img src="https://img-blog.csdnimg.cn/20200421110341144.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>然后拷贝破解文件license.dat到13.02.011文件夹下。</p><h2 id="4、-设置环境变量"><a href="#4、-设置环境变量" class="headerlink" title="4、 设置环境变量"></a><strong>4、 设置环境变量</strong></h2><p>在终端输入<code>sudo gedit /etc/environment</code><br>然后输入<code>CDLMD_LICENSE_FILE="/opt/CD-adapco/license.dat"</code><br><strong><strong>注意，引号部分是你的license目录，请自行替换。</strong></strong><br>最后在终端输入<code>source /etc/environment</code><br>重启计算机，结束破解</p><h2 id="5、-如何打开STAR-CCM"><a href="#5、-如何打开STAR-CCM" class="headerlink" title="5、 如何打开STAR-CCM+"></a><strong>5、 如何打开STAR-CCM+</strong></h2><p>打开终端，输入starccm+即可， Enojy!<br>  <img src="https://img-blog.csdnimg.cn/20200421110443440.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;在linux下安装解Star-CCM&quot;&gt;&lt;a href=&quot;#在linux下安装解Star-CCM&quot; class=&quot;headerlink&quot; title=&quot;在linux下安装解Star CCM+&quot;&gt;&lt;/a&gt;在linux下安装解Star CCM+&lt;/h2&gt;&lt;p&gt;&lt;str</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用OpenMP进行C++并行编程的一些心得</title>
+    <link href="https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/09/shi-yong-openmp-jin-xing-c-bing-xing-bian-cheng-de-yi-xie-xin-de/"/>
+    <id>https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/09/shi-yong-openmp-jin-xing-c-bing-xing-bian-cheng-de-yi-xie-xin-de/</id>
+    <published>2021-12-09T12:00:37.000Z</published>
+    <updated>2021-12-10T12:01:45.522Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在编程时，由于涉及到大量for循环等遍历计算，需要了解并行编程知识，于是看了下OpenMP的相关教程；</p><p>何为OpenMP?以下为百度百科内容：</p><p><em>OpenMP是由OpenMP Architecture Review Board牵头提出的，并已被广泛接受，用于<a href="https://baike.baidu.com/item/%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98/2182364">共享内存</a>并行系统的多处理器程序设计的一套指导性编译处理方案(Compiler Directive) [1] 。OpenMP支持的编程语言包括<a href="https://baike.baidu.com/item/C">C</a>、<a href="https://baike.baidu.com/item/C%2B%2B">C++</a>和<a href="https://baike.baidu.com/item/Fortran">Fortran</a>；而支持OpenMp的<a href="https://baike.baidu.com/item/%E7%BC%96%E8%AF%91%E5%99%A8/8853067">编译器</a>包括Sun Compiler，GNU Compiler和Intel Compiler等。OpenMp提供了对<a href="https://baike.baidu.com/item/%E5%B9%B6%E8%A1%8C%E7%AE%97%E6%B3%95/967188">并行算法</a>的高层的抽象描述，程序员通过在<a href="https://baike.baidu.com/item/%E6%BA%90%E4%BB%A3%E7%A0%81">源代码</a>中加入专用的pragma来指明自己的意图，由此编译器可以自动将程序进行并行化，并在必要之处加入同步互斥以及通信。当选择忽略这些pragma，或者编译器不支持OpenMp时，程序又可退化为通常的程序(一般为<a href="https://baike.baidu.com/item/%E4%B8%B2%E8%A1%8C/3555818">串行</a>)，代码仍然可以正常运作，只是不能利用多线程来加速程序执行</em>。</p><p>在用OpenMP进行并行编程时，只需要加入#pragma omp parallel语句以及后面的操作命令即可，十分简单，便于程序员操作；</p><p>下面以vs为例，介绍OpenMP的简单用法：</p><p>1、首先，新建项目并添加代码后，需要打开vs的OpenMP支持选项：<strong>右键项目属性-C/C+±语言-OpenMP支持</strong><br><img src="https://img-blog.csdnimg.cn/20191219104240890.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>2、其次，需要添加头文件&lt;omp.h&gt;</strong></p><p>3、OpenMP有很多命令可以用，比较常见的就是用于for循环来提升循环效率，即</p><pre><code>#pragma  omp parallel for</code></pre><p>4、<strong>在使用OpenMP时，要注意避免线程数据之间的竞争而导致计算出现差错，同时，亦应合理管理私有数据和公有数据</strong></p><p>为避免线程数据之间的竞争而导致计算出现差错，下面是应用的一个例子</p><pre class=" language-CPP"><code class="language-CPP">#include "pch.h"#include <iostream>#include <stdio.h>#include "omp.h"#include<ctime>using namespace std;int main(int argc, char **argv) {    //设置线程数，一般设置的线程数不超过CPU核心数，这里开4个线程执行并行代码段    omp_set_num_threads(8);    double start = clock();    int sum=0;#pragma omp parallel     {    #pragma omp for reduction(+:sum)        for (int i = 0; i < 40000; i++)        {            for (int j = 0; j < 40000; j++)            {                //cout << "i = " << i << ", I am Thread " << omp_get_thread_num() << endl;                sum += 1;            }        }        }    printf("sum=%d\n", sum);    double end = clock();    printf("Running time= %f", (end - start)/CLOCKS_PER_SEC);}</code></pre><p>reduction(+:sum)</p><p>冒号前面的“+”表示在各线程中sum要保留数据，计算结束后一起累加。</p><p>当然，OpenMP 不止能做累加，凡是累计运算都是可以的，如下表所示：</p><table><thead><tr><th>操作</th><th>私有临时变量初值</th></tr></thead><tbody><tr><td>+、-</td><td>0</td></tr><tr><td>*</td><td>1</td></tr><tr><td>&amp;</td><td>~0</td></tr><tr><td>`</td><td>`</td></tr><tr><td>^</td><td>0</td></tr><tr><td>&amp;&amp;</td><td>1(true)</td></tr><tr><td>`</td><td></td></tr></tbody></table><p>再如，为合理管理私有数据和公有数据，private命令可以声明循环的私有变量，这些变量在各线程中互相独立，互不影响，但是要注意，private不可声明static变量；</p><pre class=" language-CPP"><code class="language-CPP">#pragma  omp parallel for private(k1,k2)        for (k1 = 1; k1 < 100; k1++)        {            for (k2 = 1; k2 < 100; k2++)            {                cout <<"k1="<< k1 << endl;                cout <<"k2="<< k2 << endl;                cout << "k=" << k << endl;            }                    }</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近在编程时，由于涉及到大量for循环等遍历计算，需要了解并行编程知识，于是看了下OpenMP的相关教程；&lt;/p&gt;
+&lt;p&gt;何为OpenMP?以下为百度百科内容：&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;OpenMP是由OpenMP Architecture Review Board牵头提出的</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于C++函数引用传递的一些心得</title>
+    <link href="https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/08/guan-yu-c-han-shu-yin-yong-chuan-di-de-yi-xie-xin-de/"/>
+    <id>https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/08/guan-yu-c-han-shu-yin-yong-chuan-di-de-yi-xie-xin-de/</id>
+    <published>2021-12-08T11:56:57.000Z</published>
+    <updated>2021-12-10T12:01:45.521Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在看别人的程序的时候，了解到一种新的函数写法。<br>通常，我么在使用通常来讲，函数通过形参接收实参的数值，并返回相应的结果，这种方式我么成为“<em><strong>按值传递</strong></em>”（pass-by-value）,这种传递方法并不会修改原始数值本身。</p><p><em><strong>但是，如果想直接更改正在被调用中的函数中的一个值，就可以通过引用传递的方式来进行实现。</strong></em><br>这种方法我们称之为“<em><strong>引用传递</strong></em>”(pass-by-reference)<br>　引用参数传递过程中，被调函数的形式参数也作为局部变量在栈中开辟了内存空间，但是这时存放的是由主调函数放进来的实参变量的地址。被调函数对形参（本体）的任何操作都被处理成间接寻址，即通过栈中存放的地址访问主调函数中的实参变量（根据别名找到主调函数中的本体）。因此，被调函数对形参的任何操作都会影响主调函数中的实参变量。（此处引用*飘剑如虹 *的博客，原地址<a href="https://blog.csdn.net/u013130743/article/details/80806179%EF%BC%89">https://blog.csdn.net/u013130743/article/details/80806179）</a></p><h3 id="什么叫引用传递？"><a href="#什么叫引用传递？" class="headerlink" title="什么叫引用传递？"></a>什么叫引用传递？</h3><p>当使用引用变量作为形参时，它将变为实参列表中相应变量的别名，对形参进行的任何更改都将真正更改正在调用它的函数中的变量。当以这种方式将数据传递给形参时，该实参被称为按引用传递。<br>为了指明一个函数的形参是按引用传递的，只需要简单的对函数原型的形参类型添加一个&amp;标识即可<br>例如：</p><pre class=" language-CPP"><code class="language-CPP">int &a//这里的a就表示一个int类型的引用</code></pre><p>为了让大家更清楚的认识到引用传递，这里举个例子：</p><pre class=" language-CPP"><code class="language-CPP">using namespace std;int add1(int a, int b){    int c = a + b;    return c;}//按值引用int a = 1;void square(int &a){    a = pow(a, 2);}//引用传递int main(){        cout <<"1和2加起来等于 "<< add1(1, 2) << endl;    int z = 2;    cout << "before reference 'z'= " << z << endl;    square(z);    cout << "after reference 'z'= " <<z<< endl;}</code></pre><p>输出：<br><img src="https://img-blog.csdnimg.cn/20191104113605236.png" alt="在这里插入图片描述"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;最近在看别人的程序的时候，了解到一种新的函数写法。&lt;br&gt;通常，我么在使用通常来讲，函数通过形参接收实参的数值，并返回相应的结果，这种方式我么成为“&lt;em&gt;&lt;strong&gt;按值传递&lt;/strong&gt;&lt;/em&gt;”（pass-by-value）,这种传递方法并不会修改原始数值本</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>虚拟机安装Debian以及配置SALOME教程</title>
+    <link href="https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/07/xu-ni-ji-an-zhuang-debian-yi-ji-pei-zhi-salome-jiao-cheng/"/>
+    <id>https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/07/xu-ni-ji-an-zhuang-debian-yi-ji-pei-zhi-salome-jiao-cheng/</id>
+    <published>2021-12-07T14:01:42.000Z</published>
+    <updated>2021-12-08T07:06:57.325Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="date-2021-12-05-20-35-00"><a href="#date-2021-12-05-20-35-00" class="headerlink" title="date: 2021-12-05 20:35:00"></a>date: 2021-12-05 20:35:00</h2><p>本文为Linux系统Debian8.0的安装以及开源多物理场耦合平台SALOME的配置教程。</p><h3 id="一、准备文件"><a href="#一、准备文件" class="headerlink" title="一、准备文件"></a>一、准备文件</h3><pre class=" language-html"><code class="language-html">1. 虚拟机使用VirtualBox--版本5.2，不建议使用最新版本   下载链接：[VirtualBox官方中文版5.2.26](http://www.xitongtiandi.net/soft_gj/4907.html)2. Debian使用8.0即可，使用新版本需要对应版本的SALOME；   下载链接可以直接去官网下载:[SALOME官网](https://www.salome-platform.org/)3. SALOME直接去官网下载，目前使用SALOME9.2版本，仅用于后处理。倘若要使用SALOME的YACS模块，则要使用SALOME8.4版本</code></pre><h3 id="二-、Debian安装"><a href="#二-、Debian安装" class="headerlink" title="二 、Debian安装"></a>二 、Debian安装</h3><p>请参考<a href="https://blog.csdn.net/technologyleader/article/details/81870496">VirtualBox安装Debian教程</a></p><h3 id="三-、安装增强功能以及共享文件夹"><a href="#三-、安装增强功能以及共享文件夹" class="headerlink" title="三 、安装增强功能以及共享文件夹"></a>三 、安装增强功能以及共享文件夹</h3><ul><li>进入Debian系统内，在VirtualBox的菜单栏上，点击Devices- Insert Guest Additions CD image。<br>这样操作不会提示什么信息，但是可以看到下图中光盘。</li></ul><p><img src="https://img-blog.csdnimg.cn/20200609185224904.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="下载后样式"></p><ul><li> 在命令号窗口里，安装linux-headers-3.16.0-4-amd64、gcc和 make。在root用户下，输入命令：<code>apt-get install linux-headers-3.16.0-4-amd64 gcc make</code></li><li> 在home工作目录下，输入命令ls，查看是否有mnt/文件夹 </li><li> 进入mnt文件夹里，输入命令<code>cd mnt</code>。创建新的文件夹cdrom，输入命令<code>mkdir cdrom</code>。</li><li> 回到上一级目录里，输入命令<code>cd ..</code>。将cd驱动器安装在新建的文件夹里，输入命令<code>mount /dev/cdrom /mnt/cdrom</code>。</li><li> 输入命令<code>cd mnt/cdrom</code>。 输入命令ls，查看在cdrom里的所有文件。</li><li>运行VBoxLinuxAdditions.run。输入命令<code>./ VBoxLinuxAdditions.run</code>. 如果有选项，选择yes. 这个操作的之下需要几分钟。这样VirtualBox增强功能就安装好了。现在输入命令shutdown now关闭虚拟机。<br> <img src="https://img-blog.csdnimg.cn/2020060918524358.png" alt="安装过程"></li><li>在Virtualbox 主面板上，选中刚才的系统名字，例如下图中的kanglong。点击Setting-General-Advanced. 修改Shared Clipboard和Drag’n’Drop的设置为Bidirectional. 点击OK. 这将允许在两个系统之间复制文本。<br> <img src="https://img-blog.csdnimg.cn/20200609185253615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="虚拟机设置"></li></ul><h3 id="四、SALOME安装"><a href="#四、SALOME安装" class="headerlink" title="四、SALOME安装"></a>四、SALOME安装</h3><ol><li>首先需将SALOME安装包放到windows共享文件夹下面<br> <img src="https://img-blog.csdnimg.cn/20200609190054859.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="拷贝到主机目录"></li><li>然后进入虚拟机系统，创建一个文件夹，并将共享文件夹挂载到该文件夹：<br> 依次 输入命令如下：</li></ol><pre class=" language-cpp"><code class="language-cpp">su<span class="token comment" spellcheck="true">//进入root用户</span>mkdir luoxiaoshare<span class="token comment" spellcheck="true">//创建文件</span>mount  <span class="token operator">-</span>t  vboxsf  VMshares luoxiaoshare<span class="token comment" spellcheck="true">//VMshares即win下的共享文件夹</span></code></pre><p>挂载成功，可以在luoxiaoshare下看到共享文件夹的内容：<br><img src="https://img-blog.csdnimg.cn/20200609191046607.png" alt="可以看到共享文件"><br>然后将SALOME安装包复制到linux某一文件夹，使用命令</p><pre class=" language-cpp"><code class="language-cpp">mkdir <span class="token operator">/</span>home<span class="token operator">/</span>luoxiao<span class="token operator">/</span>salome9<span class="token number">.2</span>          <span class="token comment" spellcheck="true">//可以自行设置，放在哪里都可以</span>cp <span class="token operator">-</span>i SALOME<span class="token number">-9.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>DB08<span class="token operator">-</span>SRC<span class="token punctuation">.</span>tgz <span class="token operator">/</span>home<span class="token operator">/</span>luoxiao<span class="token operator">/</span>salome9<span class="token number">.2</span><span class="token operator">/</span>  <span class="token comment" spellcheck="true">//复制安装包</span>mkdir SALOMEfiles <span class="token comment" spellcheck="true">//准备解压文件夹</span>tar zxvf SALOME<span class="token number">-9.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>DB08<span class="token operator">-</span>SRC<span class="token punctuation">.</span>tgz  <span class="token operator">-</span>C SALOMEfiles<span class="token operator">/</span>   <span class="token comment" spellcheck="true">//解压后放在该文件夹下</span>cd SALOMEfiles<span class="token operator">/</span>cd SALOME<span class="token number">-9.2</span><span class="token punctuation">.</span><span class="token number">0</span><span class="token operator">-</span>DB08<span class="token operator">-</span>SRC<span class="token punctuation">.</span><span class="token operator">/</span>salome   <span class="token comment" spellcheck="true">//可直接运行salome,无需安装</span></code></pre><p><img src="https://img-blog.csdnimg.cn/20200609191741528.png" alt="运行"><br><img src="https://img-blog.csdnimg.cn/20200609191848388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hlbGxvV29ybGQxMjExMQ==,size_16,color_FFFFFF,t_70" alt="SALOME打开截图"></p><h3 id="运行成功，enjoy！"><a href="#运行成功，enjoy！" class="headerlink" title="运行成功，enjoy！"></a><strong>运行成功，enjoy！</strong></h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;date-2021-12-05-20-35-00&quot;&gt;&lt;a href=&quot;#date-2021-12-05-20-35-00&quot; class=&quot;headerlink&quot; title=&quot;date: 2021-12-05 20:35:00&quot;&gt;&lt;/a&gt;date: 2021-12</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一个例子告诉你C++引用和指针的区别</title>
+    <link href="https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/07/yi-ge-li-zi-gao-su-ni-c-yin-yong-he-zhi-zhen-de-qu-bie/"/>
+    <id>https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/07/yi-ge-li-zi-gao-su-ni-c-yin-yong-he-zhi-zhen-de-qu-bie/</id>
+    <published>2021-12-07T11:54:56.000Z</published>
+    <updated>2021-12-10T12:01:45.524Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="C-引用vs指针"><a href="#C-引用vs指针" class="headerlink" title="C++引用vs指针"></a>C++引用vs指针</h4><p>引用很容易和指针混淆，他们之间有三个主要的不同：</p><ul><li>不存在空引用。引用必须连接到一块合法的内存。</li><li>一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。</li><li>引用必须在创建时被初始化。指针可以在任何时间被初始化。</li></ul><p>例如：</p><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token keyword">int</span><span class="token operator">&amp;</span> r<span class="token operator">=</span>i<span class="token punctuation">;</span><span class="token keyword">double</span> <span class="token operator">&amp;</span>s<span class="token operator">=</span>d</code></pre><p>第一个声明可以读作“r是一个初始化为i的整型引用”，</p><p>第二个声明可以读作：“s是一个初始化为d的double型引用”</p><p>此外，通过一个例子就可以发现：</p><p>引用者的内容和内存都和被引用者保持一致。而赋值的话不是这样，只是内容相等，会另开辟一个内存地址来存储。</p><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">"pch.h"</span></span><span class="token comment" spellcheck="true">//预编译头文件一定要放在最后面</span><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span><span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token keyword">float</span> b <span class="token operator">=</span> <span class="token number">1.234</span><span class="token punctuation">;</span>    <span class="token keyword">int</span><span class="token operator">&amp;</span> c <span class="token operator">=</span> a<span class="token punctuation">;</span>    <span class="token keyword">int</span> c1 <span class="token operator">=</span> a<span class="token punctuation">;</span>    <span class="token keyword">float</span><span class="token operator">&amp;</span> d <span class="token operator">=</span> b<span class="token punctuation">;</span>    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的值等于"</span> <span class="token operator">&lt;&lt;</span> c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"a的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>a <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//&amp;为取地址符</span>    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c1的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c1<span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"d的值等于"</span> <span class="token operator">&lt;&lt;</span> d <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><p>结果：</p><p> c的值等于1<br>​ a的内存地址为0104FC38<br>​ c的内存地址为0104FC38<br>​ c1的内存地址为0104FC14<br>​ d的值等于1.234</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;C-引用vs指针&quot;&gt;&lt;a href=&quot;#C-引用vs指针&quot; class=&quot;headerlink&quot; title=&quot;C++引用vs指针&quot;&gt;&lt;/a&gt;C++引用vs指针&lt;/h4&gt;&lt;p&gt;引用很容易和指针混淆，他们之间有三个主要的不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不存在空引用</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C++用流函数进行格式化输出</title>
+    <link href="https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/06/c-yong-liu-han-shu-jin-xing-ge-shi-hua-shu-chu/"/>
+    <id>https://mrluo123.github.io/Mrluo123.http-github.io/2021/12/06/c-yong-liu-han-shu-jin-xing-ge-shi-hua-shu-chu/</id>
+    <published>2021-12-06T11:59:03.000Z</published>
+    <updated>2021-12-10T12:01:45.519Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、setf"><a href="#1、setf" class="headerlink" title="1、setf"></a>1、setf</h4><h4 id="stef是set-flags-设置标志-的缩写。编制（flags-是以二选一的方式来做一件事情的指令。"><a href="#stef是set-flags-设置标志-的缩写。编制（flags-是以二选一的方式来做一件事情的指令。" class="headerlink" title="stef是set flags(设置标志)的缩写。编制（flags)是以二选一的方式来做一件事情的指令。"></a>stef是set flags(设置标志)的缩写。编制（flags)是以二选一的方式来做一件事情的指令。</h4><ol><li><p>ios::fixed 不用e计数法来表示浮点数</p></li><li><p>ios::scientific 用e计数法来表示浮点数</p></li><li><p>ios::showpos 始终以浮点数显示小数点和尾随的0。如果不设置此表示，而且一个数字在小数点后全是0，那么他在输出时可能既没有小数点，也没有尾随的0。</p></li><li><p>ios::right 在使用成员函数width()来设置域宽值后，输出的时候会按照区域宽度来右对齐输出</p></li><li><p>ios::left 在使用成员函数width()来设置域宽值后，输出的时候会按照区域宽度来左对齐输出</p><p>例子：</p><pre class=" language-CP"><code class="language-CP">#include "pch.h"#include <iostream>#include<fstream>#include<cstdlib>using namespace std;int main(){    float a = 0.00;    float b = 1234567.23;    int c = 10;    cout.width(50);     //设置输出域宽为50    cout << "Peter is a hansome man" << endl;    cout.setf(ios::showpoint);   //显示小数点后面位数    cout << a << endl;    cout.unsetf(ios::showpoint);//取消上一个格式化输出    cout.setf(ios::scientific);//科学计数法输出浮点数    cout << b << endl;    cout.unsetf(ios::scientific);//取消上一个格式化输出    cout.setf(ios::fixed);//直接输出浮点数    cout << b << endl;    cout.unsetf(ios::fixed);//取消上一个格式化输出    cout.setf(ios::left);//靠左输出    cout << b << "    "<<c << endl;}</code></pre></li></ol><h4 id="2、setw"><a href="#2、setw" class="headerlink" title="2、setw"></a>2、setw</h4><p>操纵元函数setw()和width()类似：</p><pre class=" language-CPP"><code class="language-CPP">cout<<“strat”<<setw(4)<<10;</code></pre><p>输出： 10；在10前面有两个空格，因为是4个域宽输出的。</p><h4 id="3、setprecision"><a href="#3、setprecision" class="headerlink" title="3、setprecision"></a>3、setprecision</h4><p>使用<em>setprecision</em>(n)可控制输出流显示浮点数的数字个数:</p><pre class=" language-CPP"><code class="language-CPP">cout<<setprecision(2)<<10.4<<endl;</code></pre><p>输出：10.30</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;1、setf&quot;&gt;&lt;a href=&quot;#1、setf&quot; class=&quot;headerlink&quot; title=&quot;1、setf&quot;&gt;&lt;/a&gt;1、setf&lt;/h4&gt;&lt;h4 id=&quot;stef是set-flags-设置标志-的缩写。编制（flags-是以二选一的方式来做一件事情的指</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
