@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #1d1adf 100%, #1d1adf 100%);
+    background-image: linear-gradient(to right, #3A5FCD 100%, #3A5FCD 100%);
 }
 
 .text-color {
@@ -569,14 +569,14 @@ header .go-back i {
 
 .bg-cover .container {
     position: relative;
-    color: #fff;
+    color: rgb(2, 2, 2);
     z-index: 2;
 }
 
 .bg-cover .title {
     font-size: 4rem;
     line-height: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     position: relative;
 }
 
@@ -584,7 +584,7 @@ header .go-back i {
     font-weight: 300;
     font-size: 1.25rem;
     line-height: 1.4em;
-    color: #eee;
+    color: rgb(0, 0, 0);
 }
 
 .bg-cover .post-title {
@@ -1909,7 +1909,7 @@ p.search-result-summary{
 }
 
 .top-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
+    background: linear-gradient(to bottom right, #3A5FCD 0%, #3A5FCD 100%);
     width: 48px;
     height: 48px;
 }
