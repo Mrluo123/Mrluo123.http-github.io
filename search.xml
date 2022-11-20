@@ -207,53 +207,6 @@ free(y);
       </tags>
   </entry>
   <entry>
-    <title>一个例子告诉你C++引用和指针的区别</title>
-    <url>/Mrluo123.http-github.io/post/36765.html</url>
-    <content><![CDATA[<h4 id="C-引用vs指针"><a href="#C-引用vs指针" class="headerlink" title="C++引用vs指针"></a>C++引用vs指针</h4><p>引用很容易和指针混淆，他们之间有三个主要的不同：</p>
-<ul>
-<li>不存在空引用。引用必须连接到一块合法的内存。</li>
-<li>一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。</li>
-<li>引用必须在创建时被初始化。指针可以在任何时间被初始化。<span id="more"></span>
-例如：</li>
-</ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span><span class="token operator">&amp;</span> r<span class="token operator">=</span>i<span class="token punctuation">;</span>
-<span class="token keyword">double</span> <span class="token operator">&amp;</span>s<span class="token operator">=</span>d
-</code></pre>
-<p>第一个声明可以读作“r是一个初始化为i的整型引用”，</p>
-<p>第二个声明可以读作：“s是一个初始化为d的double型引用”</p>
-<p>此外，通过一个例子就可以发现：</p>
-<p>引用者的内容和内存都和被引用者保持一致。而赋值的话不是这样，只是内容相等，会另开辟一个内存地址来存储。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">"pch.h"</span></span><span class="token comment" spellcheck="true">//预编译头文件一定要放在最后面</span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">float</span> b <span class="token operator">=</span> <span class="token number">1.234</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span><span class="token operator">&amp;</span> c <span class="token operator">=</span> a<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> c1 <span class="token operator">=</span> a<span class="token punctuation">;</span>
-    <span class="token keyword">float</span><span class="token operator">&amp;</span> d <span class="token operator">=</span> b<span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的值等于"</span> <span class="token operator">&lt;&lt;</span> c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"a的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>a <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//&amp;为取地址符</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c1的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c1<span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"d的值等于"</span> <span class="token operator">&lt;&lt;</span> d <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>结果：</p>
-<p> c的值等于1<br>​ a的内存地址为0104FC38<br>​ c的内存地址为0104FC38<br>​ c1的内存地址为0104FC14<br>​ d的值等于1.234</p>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用OpenMP进行C++并行编程的一些心得</title>
     <url>/Mrluo123.http-github.io/post/11326.html</url>
     <content><![CDATA[<p>最近在编程时，由于涉及到大量for循环等遍历计算，需要了解并行编程知识，于是看了下OpenMP的相关教程；</p>
@@ -354,50 +307,55 @@ int main(int argc, char **argv) {
         <category>并行计算</category>
       </categories>
       <tags>
-        <tag>C++</tag>
         <tag>OpenMP</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
-    <title>关于C++函数引用传递的一些心得</title>
-    <url>/Mrluo123.http-github.io/post/621.html</url>
-    <content><![CDATA[<p>最近在看别人的程序的时候，了解到一种新的函数写法。<br>通常，我么在使用通常来讲，函数通过形参接收实参的数值，并返回相应的结果，这种方式我么成为“<em><strong>按值传递</strong></em>”（pass-by-value）,这种传递方法并不会修改原始数值本身。</p>
-<span id="more"></span>
-<p><em><strong>但是，如果想直接更改正在被调用中的函数中的一个值，就可以通过引用传递的方式来进行实现。</strong></em><br>这种方法我们称之为“<em><strong>引用传递</strong></em>”(pass-by-reference)<br>　引用参数传递过程中，被调函数的形式参数也作为局部变量在栈中开辟了内存空间，但是这时存放的是由主调函数放进来的实参变量的地址。被调函数对形参（本体）的任何操作都被处理成间接寻址，即通过栈中存放的地址访问主调函数中的实参变量（根据别名找到主调函数中的本体）。因此，被调函数对形参的任何操作都会影响主调函数中的实参变量。（此处引用*飘剑如虹 *的博客，原地址<a href="https://blog.csdn.net/u013130743/article/details/80806179%EF%BC%89">https://blog.csdn.net/u013130743/article/details/80806179）</a></p>
-<h3 id="什么叫引用传递？"><a href="#什么叫引用传递？" class="headerlink" title="什么叫引用传递？"></a>什么叫引用传递？</h3><p>当使用引用变量作为形参时，它将变为实参列表中相应变量的别名，对形参进行的任何更改都将真正更改正在调用它的函数中的变量。当以这种方式将数据传递给形参时，该实参被称为按引用传递。<br>为了指明一个函数的形参是按引用传递的，只需要简单的对函数原型的形参类型添加一个&amp;标识即可<br>例如：</p>
-<pre class=" language-CPP"><code class="language-CPP">int &a//这里的a就表示一个int类型的引用
+    <title>一个例子告诉你C++引用和指针的区别</title>
+    <url>/Mrluo123.http-github.io/post/36765.html</url>
+    <content><![CDATA[<h4 id="C-引用vs指针"><a href="#C-引用vs指针" class="headerlink" title="C++引用vs指针"></a>C++引用vs指针</h4><p>引用很容易和指针混淆，他们之间有三个主要的不同：</p>
+<ul>
+<li>不存在空引用。引用必须连接到一块合法的内存。</li>
+<li>一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。</li>
+<li>引用必须在创建时被初始化。指针可以在任何时间被初始化。<span id="more"></span>
+例如：</li>
+</ul>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token operator">&amp;</span> r<span class="token operator">=</span>i<span class="token punctuation">;</span>
+<span class="token keyword">double</span> <span class="token operator">&amp;</span>s<span class="token operator">=</span>d
 </code></pre>
-<p>为了让大家更清楚的认识到引用传递，这里举个例子：</p>
-<pre class=" language-CPP"><code class="language-CPP">using namespace std;
-int add1(int a, int b)
-{
-    int c = a + b;
-    return c;
-}//按值引用
-int a = 1;
-void square(int &a)
-{
-    a = pow(a, 2);
-}//引用传递
-int main()
-{
-    
-
-    cout <<"1和2加起来等于 "<< add1(1, 2) << endl;
-    int z = 2;
-    cout << "before reference 'z'= " << z << endl;
-    square(z);
-    cout << "after reference 'z'= " <<z<< endl;
-}
+<p>第一个声明可以读作“r是一个初始化为i的整型引用”，</p>
+<p>第二个声明可以读作：“s是一个初始化为d的double型引用”</p>
+<p>此外，通过一个例子就可以发现：</p>
+<p>引用者的内容和内存都和被引用者保持一致。而赋值的话不是这样，只是内容相等，会另开辟一个内存地址来存储。</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">"pch.h"</span></span><span class="token comment" spellcheck="true">//预编译头文件一定要放在最后面</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> b <span class="token operator">=</span> <span class="token number">1.234</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">&amp;</span> c <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> c1 <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token keyword">float</span><span class="token operator">&amp;</span> d <span class="token operator">=</span> b<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的值等于"</span> <span class="token operator">&lt;&lt;</span> c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"a的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>a <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//&amp;为取地址符</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c1的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c1<span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"d的值等于"</span> <span class="token operator">&lt;&lt;</span> d <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>输出：</p>
-<img src="/Mrluo123.http-github.io/post/621/1.jpg" class="" width="500" height="500">
+<p>结果：</p>
+<p> c的值等于1<br>​ a的内存地址为0104FC38<br>​ c的内存地址为0104FC38<br>​ c1的内存地址为0104FC14<br>​ d的值等于1.234</p>
 ]]></content>
       <categories>
         <category>C++</category>
       </categories>
       <tags>
-        <tag>引用传递</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -513,6 +471,48 @@ int main(int argc, char** argv) {
       </tags>
   </entry>
   <entry>
+    <title>关于C++函数引用传递的一些心得</title>
+    <url>/Mrluo123.http-github.io/post/621.html</url>
+    <content><![CDATA[<p>最近在看别人的程序的时候，了解到一种新的函数写法。<br>通常，我么在使用通常来讲，函数通过形参接收实参的数值，并返回相应的结果，这种方式我么成为“<em><strong>按值传递</strong></em>”（pass-by-value）,这种传递方法并不会修改原始数值本身。</p>
+<span id="more"></span>
+<p><em><strong>但是，如果想直接更改正在被调用中的函数中的一个值，就可以通过引用传递的方式来进行实现。</strong></em><br>这种方法我们称之为“<em><strong>引用传递</strong></em>”(pass-by-reference)<br>　引用参数传递过程中，被调函数的形式参数也作为局部变量在栈中开辟了内存空间，但是这时存放的是由主调函数放进来的实参变量的地址。被调函数对形参（本体）的任何操作都被处理成间接寻址，即通过栈中存放的地址访问主调函数中的实参变量（根据别名找到主调函数中的本体）。因此，被调函数对形参的任何操作都会影响主调函数中的实参变量。（此处引用*飘剑如虹 *的博客，原地址<a href="https://blog.csdn.net/u013130743/article/details/80806179%EF%BC%89">https://blog.csdn.net/u013130743/article/details/80806179）</a></p>
+<h3 id="什么叫引用传递？"><a href="#什么叫引用传递？" class="headerlink" title="什么叫引用传递？"></a>什么叫引用传递？</h3><p>当使用引用变量作为形参时，它将变为实参列表中相应变量的别名，对形参进行的任何更改都将真正更改正在调用它的函数中的变量。当以这种方式将数据传递给形参时，该实参被称为按引用传递。<br>为了指明一个函数的形参是按引用传递的，只需要简单的对函数原型的形参类型添加一个&amp;标识即可<br>例如：</p>
+<pre class=" language-CPP"><code class="language-CPP">int &a//这里的a就表示一个int类型的引用
+</code></pre>
+<p>为了让大家更清楚的认识到引用传递，这里举个例子：</p>
+<pre class=" language-CPP"><code class="language-CPP">using namespace std;
+int add1(int a, int b)
+{
+    int c = a + b;
+    return c;
+}//按值引用
+int a = 1;
+void square(int &a)
+{
+    a = pow(a, 2);
+}//引用传递
+int main()
+{
+    
+
+    cout <<"1和2加起来等于 "<< add1(1, 2) << endl;
+    int z = 2;
+    cout << "before reference 'z'= " << z << endl;
+    square(z);
+    cout << "after reference 'z'= " <<z<< endl;
+}
+</code></pre>
+<p>输出：</p>
+<img src="/Mrluo123.http-github.io/post/621/1.jpg" class="" width="500" height="500">
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>引用传递</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何安装win11+ubuntu双系统</title>
     <url>/Mrluo123.http-github.io/post/3709.html</url>
     <content><![CDATA[<h1 id="Windows11-x2F-10安装Ubuntu-20-04-6-LTS双系统"><a href="#Windows11-x2F-10安装Ubuntu-20-04-6-LTS双系统" class="headerlink" title="Windows11/10安装Ubuntu 20.04.6 LTS双系统"></a>Windows11/10安装Ubuntu 20.04.6 LTS双系统</h1><span id="more"></span>
@@ -549,6 +549,52 @@ int main(int argc, char** argv) {
       </tags>
   </entry>
   <entry>
+    <title>虚拟机安装Debian以及配置SALOME教程</title>
+    <url>/Mrluo123.http-github.io/post/23422.html</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="9bc410bb7dd9ec0e43c4c2b23a15aee8729c849daba08057021de0ea562be842">4181f10c7c15e461887c19ff1613231b22aa4d85e140ea19953c563fcc668896f3a80b785891477e79ac7435d5f949ed808863d2da90b450e33ffb8f6344545bdc35d0ed41f3fae9fbdc51e36f2e7f0f29418675200a0abe50c932cc5e77553ff150e822684f6981af3b2d513c5d4840f8c43f47894c65b1f0ef68327d2b4979eaa987b89518e81539ed459b455adee1b339a2b15ebf94356060f5eeffdb7ab711316f59dac0ece67ff89a4367097f9a71cbbd5bb21c81cac3d29f00bca201651b5247f8aff682d9333bfd1f81401180e9c144e411750dc854f8bbf4bf6d4ff6bd90b340434311f1d7e934f75def6aa7e67cd29e69baf12e1d2b71e1f7977400a540b7a4f31018fa7d0c1e6aff64b8c716362a44d5e7a5f3a956dc620c6946351541a951df6d9d805ffc686198e1033e6d164df5afebefa255b4b7f843a42a2b3577a319c68d73afb431c62d01407fe1b4f027028833e1128dce17ce7a077ebb8e99a0497f079eb9bd017c2c0524383b1186142b0d6963dac8a146f93bca8e9013b1121ea7f1dac98bada68762a51facda7c16581fc84d4c1acc607abbdcea46493ee4eecb427b0f13fdfd104b6f6ee41b0bdf08754ab8a6f3f38743e03f0ed1becddab0ad9b86bbf2c9dbf5268bba22a98ca2d3262f5b8814d340e63a0029e7975f54a11a9a9e58f5fa0178f6ac6ff5ca7d21d9c11ca1e7e324528eed12ed02153a96d84d676b8793eb4f0d5b6e9f19234c996a007340a99b8e0af185705494f57b4dd81e7b00f96549dcda27cbb34b07ba48578c5056c4ccdef4e539d9fb1b9e18f061807bf454b964347febe76841dd367c89f509947ace167119c19f2e3595bec1b33b96879aafe30b6d1773712f7dfc15400161eea59aefd1264b66d52fca32c556dcd445bde6b7d8d6e3071e89507fd3de8ce435c7924c67a868c2ca3b5e1ab7d2aa301a83c1987895f7cce55491ffc56c3517f220d9a2f71dc3d71f7b9027c0441beee8c63b1fe7d6ca7ca76db9a61735c80504db3c29ebc9cc164d63f109b60f52125039d3c448865e4239510836a511ed09fe0d53583f34b8f3af14c263228e322e934fe9ad1cd366e6c89040a07ff1b2d7ad3097e1dabb60cfb211863f58ad3addd29662e736b0f9f133c00da6581acf9fe504559e72e42d8e8a3979d2f98b323149d6e46dbed587552fab9d38cfbcbefcaa1b23a6b4aaf90481f918ea2fa76794611be53d3dc7c19f17a6086fad2669e8ed9babab36f9c31835c8ce5940d0cb8e2fe52ccaaf552a97af0ba9dc7ca2e4b9c2bf75d8a3c9de6604cd9a3e9b6790a8e256d78303c7063e3e459f8615221982875b4c59f299c52dc3c70678d11583bcf96d1d7f22ffcea162c25705749bd026ea91f581dd8a6812415c1d3fb7468b2e850ed80a374e36a4c1c0e4ec9e3544ec225b658da33a0de2043730d4ad9df753da54f388860f107a0445b4c772638d86d3094440092fa240b411c290501bed3db4e72b5f3a82012c77e089a4ab69f5ddec0724e50f47026105e72033d14ad5124628f5382a0b09ca7e684c4dc022b5fc8955a451c6a9c323a558d0a114b804c2b4938b265ec5209938bf2cdc4749d5183a84ace401dbc2201aae09815b19c1a5efb102897fd63ed3d80392fcbf469e605095519124dbee9cf0aa4575d2cd44bc7e3c0ecbffc4fd7a053092be8ccd8f3122d2ffedd982eeedcb24e80c1d46478a01e69aad827e6f0520c0613f8d398aa7618ec85cffea924981215ba3ef6b710a0365673433563ef345dff6d7cae7103df12f8ebf57cdcec207ae708f4c12dcb2a41ee9cac17e8ce5f0a8e9dc1263c71935af3cd0841c7a8550e9fea53d4da42bd82383b08bf053cb4b0a263a10a0c53b3781c456d48ad18fa99fe2174232c07be59b5381c3c8b4635ef42e3aed24bd0ed2f9981fb5f9ae7984769dfd86d693d66b117ef91725492862cf98b2e6202bf9be8521544899ed3e4c4119f18e64630d8a0cd641439af8d249ad1b159d852b5cc0a65aee7abad513f579e6f98b1b9bf2a27c02a4e5d25b65233d43902ad20b2b242134a60dce4d768afe2e56608fad23b0ea950b26fb77c41d6ed41506f617ceef33f3f77bbb8b016e43647e3f41764704755ba8418eb77ca908a0a51a13b6584da196bf57d891fe1aed9ffaef5470e1eb3d957696f593e136899f65d476038f6e8f028f8f9c529b152fb7f425e1fedc78126a9ec89c0bffd00e791229e4423ee0896c18825e3c19b9f9baf181f51d5838d2ac13a3707790355d7e1fce9f82d419190b48ab4a07a247d11cea323b536469495ff1f3ab3b787b8c7832c38765069b127281d9646b9f037f02ef2c545921dd3280dce109298cea2ca0d5e8b9cebd7374b9325f8d1fc011c8d29ee6621b0b3e0ee5e5e07ccc8eab6cf3128183834559ae540596f9ab60030f478bcff63f6b0862e46af1f7867855003d60cf611a4d261969c500f84b0eb81fb4212daa55414d8bf7501c0012dd0b3398b91e1678c04fe52176ae52d08419b262eb6f675a11e34f5af3aa0d6e9f7963bd770bfeca5629d98406f2f5cd99e1c0d58fc027c91e03448b9285651119f4f50dbf43e2c7eae23d6df5d396695c6abec191f1fb3175c21a487a46ee8bc8317627a9cdb57aad6a6981b7212960d668fbb8b0c37698e901abea16d6f66726bdeb4660efeb517b9c028fb6e0120549556a6961d3d3cca09b9f4a0c004c8dcd813123c38c5c481dd29541b431820307788c2b0fd69a55678e8402917befcea0a26394d0640435966ef79a702cee24a6c1cb280dc50e95bfcca4011458e08968ea0db8c13492ee23649103bf78a98b67c7c05dddad21c2c24a994b11ff49187f943be72d8b4abad3e279a5d43976295d83eaab5a8ba3b53baab323019c4ec09bc7e0e4106a8d9f8635eb7bef853aff06aece8f5cd93aa6c9688cbac6f10fe86ac8278400e67acd10723a6946be1b56fc138db3dbcd12a3c3bfc85e0fd72ff0202c436e19939640b70d3f4dec391744d224a8f3042831e77de8a9f96b231c8de65c20e9081e1d148828a98a2e72bb2cd8cf081bb28017d53992ed13a431c875d8282c93a1efaf4c154cc4da67324445e96fe7d28bae4acfded880abf693205e1d4e9963f1c3732d4c8d1a41dc21a789952d3ea8b4146e18f8453e46c8c3f0f57b05d5385b027eaf19545eefaf6408480fd1bf3cae489f37003e99dbf48e9cac3b2e290dc17f6963319af2df9cfa1aea7c54e64487c11fd33e3c7858f4207c70cdc4d92033a79894d48e34ee98a1a1276703bdbc031eee2404bbc96968b92073d9d0f29ae79e3c7f5f514a8648594b0ce64d935da9701168a9927e350655ae8ec6ffeb00599be3c1bd38440cfc5ccc4e7985df99d492ed9bfd69422da039447fec046e94e3611290dcf02e2ac512725ff6ac0e2d8ec66d163344ac15d883e750c172a7162fc32814d8111abbcd4f2a95736e8f74967060fd053345b905cedf295b35ca4f971d9122575bb1dfebaa38c6d49bd3d5edaaa52fa5cb9b13936b2e528b421ff330ef809060789cf2d4f476bb2f4bc6cc0f7c6591d33d12b1a8eee0b00843a80a9cc7d2ba6223776512cd0ceee85ecd52726ea94680361110f21c0e8a9aecd3d0d274da3429b0e35c53442369c9ed7ac0f708ca304dd85d99230db51c187dd544ea80b0beb6831ccd247b759bc293a6cbc947cb4088df77560175cfcac019446bc0841483ca7f0fcc82cf5c9d3e0a1d9dfae650ea8ddbfbcb1875625dbfea33ecabd12f5d9c94f523ab3d377588ec5ee2ff78a1923c0342c85f85a683ba0eb85b9a9134e6fb398c896f5399edc1cfd560b95b466f36058efd508c8b190e2794d8beb703a62fa2f209a4ed8a73affc0e80dd7a900eeb26f56d9132685d1592d6062fde4a2fcc8ef72fc2b12d6c4695550a1b26f7d65aac84ae269189bf20dac5622845ebfcd17c2c5871e3f92dc593eacf35b792c2845f98cca7d3361613eb97fa0bfc1592a1ca147bb73041683521b73c9ca93a4111f8ecd3c59709b5f6a517376d1e2fed6e86cc65c80c5d1685f012c73be7b86d9d19454408c769616a1a5e89b61e2f1a1ef00139d76111ff3c4f658c61ede76e4104c65e5820700224e22171b4cb9e0f8679cc4b488d22b0240445494e88c83b6f7d377d8fdf1581648a243a04a5d108fa717e4d4ef8902eb91c5452d4f45278cec5da5619b8974d107e7c7eb7734d08e81dab96284639a93aa4416534af55c1d1f4d4b539bce99f52571d32b956d84103073b52402059aa65c1c07da88aababc4f64c2466f79cb5687517ad59a2ae14c0d7e48fe238caff06343ee312d0aeb272bbab6cdc254487c3525ee57a8e2abf304b80bdaa383404698b42efe2726c4d9bec32ff02c81ef3884204277b5b2142ba148ab8918094fdfb7691be73e9572f584618b0e3438937ee6b7255fa7b3eb461f88dc20c1a5e5907cacb3f40ddb29b93005203287b8aa92733510db260f77dc8fa7b801577b25c6eb506d2e868bd8123d70ebd815483c7d4c0be0c5a82d4e6bab0ebe7d223df3ad1aac66365e69560eee9aa028d37fa2c6e07afd3f9c069a453b021e9395ab02dcc41e0b84c44f425c737ad6f75802ce3919214f8cc6aed70c085992c73c18ed3375aa4533fce102fddb33ab4ac6cabb8b743b57e5d3282f0fddcaf75959f983944f39e6165463f2f36c068b62005d673fca9bedb960a890a05bc3ad29066de4d5af958837e4d8b7b3d7b22ad8137cb65d5db6b85ef42fd1ba8e91daebaa8afa8a25ec37f9bf6e76b619cd81004866c9ee15d14b766a71158f42dd9e05a9698a1722c1298f470e560a74d3bd5403b4055a9c284d6c5b0438f45ae47c784620c2baec27986136c5a0a7d3a2c798ac2b815ff73c631b2ff8ca14239958d7fc3ccbf739757d32669761a699d762711c1bebcabb9a390e36b404a585c3f8b15946af7d036abcf8f1f116fb37d8fd76b327ca39b545a07f0465d3da497c9bd44506938c2ed77cc1557d798f259379fede9a2fd401b03c7e1958293b356f7fd99458e289f0f3a8bd022e33e16f54809e608bcfe413eba23377c4079689ac1d16eed7c3ecf09c8c2cf13c91125375f1abfac504348bbd7d9caed660fe9a65d03d92c3e05f69e69968a75d2ee110bff3566633afc93b8a18e931fa1f3d8b4b9dff7c5d1e30775b569a3a3ab36e65b0f454bc3478c2b2d74e5595f18c1491a299abb5233b78f6041a34f549b48a28c186a5f800097347cae71616053a8d816ce5af273267e0e5d59beba799d57280f5ed6dc3381d94505d1cd20e4b6f87e4834807de7d4e4c860edfae20c8beef88c10b35444ebc1b795e5bc0c0c08405fc30368fb18dad2882a62ab01275ef37544f0c2fad16abfb169851818b6674c68c59f1fedac7a99b23939162c644dfca63896b1f6b23d2efffcfcffa69db6bb218a3be6a8762cabea6cc5a5f98f1cbca48c52550056e113c47b443f5e83796bb4a5f84e4e6a7c6cbfa88f4033f7b464a319d6e03db5465a9afe3601914af80583b80cdcaa8b64e49046e0e65bfc39c9e6362e7b223d9e64d8da2abeac72fd6f82a24f58a13301c0b71278427b6e78c63673b838192df8ba1deb9fecd0d624324614cb0747fe9a4964d8a90b2f0299c29a2aea08cf7558995855bd1638e897e178c7fa57a8245c2f415cc410f5fb76d5420d8e3c973b4b271d8120c58a7ecd47fbd4c8dc3b965689fc9dd06b9a40768de84d798bb32e9fc5039f8c13d219fb3c61faf4d023d2db76f9ce57d0b9589de1bce2b06887453dbdbfd31a31060087f6e55a0c9ac006f7acd5f84689fcabc6a1cfed6b60b7b90e451069b82a0639db8ff9100cfd7d4e2015962be5eafdff6d56fe6009531d2e0d4669a6421f53394cef95c1478d0d0d67020c85588e6e1a0b15313df9bcc5daeeccee9711aad771ab20a2591480ba414ec9ef160fd046b867e4334bdc9178a7d22a3e3dcc05f6b9f084f5309a135759213918a76a5ce20e1d8d0a715d5b30ab4b35cfd69a7b554181b1b2f38c69c2956a3178db5251efaee9984fa6c65879cdb09e937940bd77a719c9174fb15c2a13a009a0cbff90238563e5ef77fc50b55fe2f72506146f87d0f6299e2bdbd149bd849df92c2dc04ae04fa0e29fa01eed04d8a1482c010c4b7dc23f6c65be3b3799f6bf28967aa89c02a4a3c753b5a8375d24b56e82b8ec495f5554c14f6e9f451e9bbefd6e457db6be662598ed358c3bec5d37d0f4274b8c527ba99ad763248e9017d96b1e127c13a9ff9ae40c2a2deaec4eef597b90ff343bd73e176958691dac471587537ca6c53b169d9e2b8085c3b3c17e4f188731b351e10542b61b1e39ae42596b5cc3a4fc846355ccb5f34c164940a23b71196124d2f967cf8b81c7004f70eb63e169f96205e3cbe6aaf95af07a13c0f2e284beb4f5a11b365acc7de02489dd7942c208df13814e8ffd2125f991adc78ce5a42f5169b0e1770ce6f1876f8d66f823313700aad8f1ad4407b1625adf067188ba52617cb62617ffcb5ee5317c217a124be34633b9c607db06aa5d573946ce7b71ea8738587132884555c2bc1dd564e809218b096c3c891ccc34cb66bfa0ae9611087dbba02aed36db3e047a42388d2b8150b195335a554d0b4ea544cb20c17092c90536f9f498ebf524a4d21cad259d763273b8aa614cb13cd10959814dd862b660531ed9e2fed09ab6cfbbfbaf2aab59b77b8b330490607c849b1ecaa78555270e38eb5402fad419ad1171b3a4f263e2c92c8ccb8c36188e46bb11580b461c5d8cfcd96073d40eabdee0bd9075c7f085702a5f508177526197b5ba3cd3f41122f7f8ba23c56cc82a4e51bfc2c6ab4559fe8fdf998ce7cd4c41043aa2991d17815a2e0b3e2b2dd723af699ae94e222c1ae6cd1585448abe8817acd377394375c81103f40470ca8899555ee2e130788efac21cc02ab821d4e311b4556803e2bad282b9054f781be050d8e1fff6931b187724804139543ecae2892c01b675fe3f4e8f33310a1a03c68cb8ee26091d1204d105c388b12d23c2cad827985aff89deb8a5fe05cdfc246eb8c1c94db0d1e1e6290c9b737342f076be8e4606e6dd77c18d337a358adbdfdccc3d88fd7f4a9760e72d06f5ad087b2dee9fec5f6d1e30ca8ef18584dc107e118a9d77a45113465a750fb31da8cb4823bfc9033908c08a89df7115a4d49c64d96d3573d953d344275785420996371ed37c0291f460155942e7cbb1acb6786ee57b7386dfb0da67d4e47909e2bdb0032dd3525355c006411af37b752fbedc5f2ebcc95b9aed7c7608e03ed4f8b3ebd1d5d0180556397062ab7173f5b54bdb35e4046df6fa8feb188cc2a67d58d45cf5abfe9b2d145f09b1706f62211cef2f586fc2a3fb825b5f40bfeca1801d94d4b79d2d69ccda88092607ddf4af4c316cde1351555b3c55b88418adc444c4e76ad776c22d8e15033ac7de189602eb7132b80231722c9571af0ef38fa8b724f5c22dc30e7675e362fba6e9af5abd31b712211cc504029cd08019a0f84f6ce544560a39ff5de917979543cedbba62c7dcfe44bdee20d7947ea40590816a69a41119d05949ccde2a0bab54c449ef5aee052a786c8b8300adb0d824f5c24186772a8455e51b96507788a6f5dbd635d33fec9c79ebbdd29f057dbc6668b06b70071939d40926011c2b55a227764bf701a44fae39efc452a9f51484d9ec4482a3713e01c059e2fb9a6379e6e562f2bc34aec7faaa0946f633af80cae568dcdf3d001c169b8e7b7f1fed838d0348b5176d84dfe29055889712338e7d3f148f2ffae3af7d1ddd6f4d5a714e88d36349f404ff2d188c50892255a7d2783a32f4f2360baef28bf375d49b32514b54d1bdce569e0330ca17890fa749813a353caa7a328780f3623c42c6701004d790efac221cf375ba1122da9a66003c803f1c3418af56a68b3fb5ff1fb7184b34b10440a8e631276ac9f8309a1e0e851446ac80ad1b2e1ed32a45c602ccc769966f0065d4af328e2aa353f6e0c48a4b9919f936ac4423bca38f0685aa2e269c431900bb7ca0fdbf5f18de905c0d1146a0b6accaafe51370ccef1675021080190a2249d298543a08826fc53a8e6f8504c141a2750bdf8ae21277cc30107972f0852aa0689652f8ed1d6ba4673b6bf1b40d4b28c020de43ed4ec12e769382c23919d5c1474373edb3d67abcf6a396a7755550433ee90ef85989a4c46532b72b5c1375dd0f1500cecbf30a0405180c0dceea51517050ac1563c6cc3918e6d6033f4065989ee7be7f88cfd1278f9998c983a38d18eac3d05e2d5a9c17373cb469702a51bdb914bf3c160adc85a037c8aa9a2c9c6f8ac14977fbc3069eaae621d6744f3bb817d241ae7a3741b15f0eeb5059937a6918e7fb1d6bd6916a61438adfb3c22aa2bfabd63e95f41eafe2e4d3666aa234f19781fa5d7d2a033d0fef9e594ebfca3aa6b53b020c7cbf70ca743de3583c5cd83c8b3d8d94a93f55dc8745fa42edac601108b56307c91f26b5502b2e0c2939ad922f66f4435f442872e0b9a486355b50ad097c4832ebad23778653af165f390f27b31861e2d70b431c971184bcc2a3550403fcc9a7d905ce4c0dae87c727710997785378387c2be4cbd5740185cf2bb2e7810baa33d28d58d87cd5203290f620c9dfac6cc0a3662947081f688259e96e4dbfc5ba9a1c927709c126b520eca798d1b42eb190d398420ce8bf7ed325735fbe1fe74ae0ac2a96926472472ad93ae96bc39421d5c8db63e7d690ee2c7d086e4fa341b51813633759da2f161654fbefa8858ddac2da8cca76be89e0e27e51fa7aac2919684076413d98bddc2dc4337c8a61615452a5c1fc444d1a3a38baf4efdccd620157a956417343260f56810e5437dfe466586e83142054f31805bc20e7db92ba8b728847d0d70d62357e46a2ffb67c0a612b7fc125a0a079470105079ba681711b90a712f29c02614a0ba85400f187c702e462f4daba647317e9429c843123a22ca29ff738cd402979e04c897e8d18b7af3cab7cdf0339ac65c8a6372a62844cc583d2a267ed88fe9521c0a3e28a1bb3fb7c57381bf6f1a354e31835238b9eec033641bb8bcaabd085360a22d1c0</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 请在这里键入本文的阅览密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/Mrluo123.http-github.io/lib/hbe.js"></script><link href="/Mrluo123.http-github.io/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>SALOME</tag>
+        <tag>虚拟机</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>核工高清素材图(长期更新中)</title>
+    <url>/Mrluo123.http-github.io/post/1b933ad6.html</url>
+    <content><![CDATA[<img src="/Mrluo123.http-github.io/post/1b933ad6/reactor.gif" class="" width="800" height="800" title="石墨慢化反应堆示意图">
+
+
+
+<img src="/Mrluo123.http-github.io/post/1b933ad6/87b4-hwzkfpu2822108.jpg" class="" width="800" height="800" title="大亚湾核电站">
+
+<h4 id="注：更多核电主题图片可以在下面网站找到："><a href="#注：更多核电主题图片可以在下面网站找到：" class="headerlink" title="注：更多核电主题图片可以在下面网站找到："></a><strong>注：更多核电主题图片可以在下面网站找到：</strong></h4><ul>
+<li><a href="https://www.vcg.com/creative-image/hedianzhan/">视觉中国</a></li>
+<li><a href="https://www.quanjing.com/category/12702301.html">全景图库</a></li>
+<li><a href="https://www.58pic.com/tupian/hedian.html">千图网</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>素材</category>
+      </categories>
+      <tags>
+        <tag>素材</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>稀疏矩阵存储压缩技术简单介绍</title>
     <url>/Mrluo123.http-github.io/post/9ed8a6a7.html</url>
     <content><![CDATA[<h2 id="什么是稀疏矩阵？"><a href="#什么是稀疏矩阵？" class="headerlink" title="什么是稀疏矩阵？"></a>什么是稀疏矩阵？</h2><p>在科学计算中，经常面临大量的线性稀疏矩阵方程组求解。所谓稀疏矩阵，即元素大部分是0的矩阵(有些资料定义非零元素不超过5%的矩阵，为稀疏矩阵，如下图所示为稀疏矩阵和稠密矩阵的示意图), 矩阵的稀疏性可以用一个分数来量化，即矩阵中零元素的个数除以矩阵中元素的总数。</p>
@@ -576,52 +622,6 @@ int main(int argc, char** argv) {
         <tag>CUDA</tag>
         <tag>稀疏矩阵</tag>
         <tag>计算机</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>核工高清素材图(长期更新中)</title>
-    <url>/Mrluo123.http-github.io/post/1b933ad6.html</url>
-    <content><![CDATA[<img src="/Mrluo123.http-github.io/post/1b933ad6/reactor.gif" class="" width="800" height="800" title="石墨慢化反应堆示意图">
-
-
-
-<img src="/Mrluo123.http-github.io/post/1b933ad6/87b4-hwzkfpu2822108.jpg" class="" width="800" height="800" title="大亚湾核电站">
-
-<h4 id="注：更多核电主题图片可以在下面网站找到："><a href="#注：更多核电主题图片可以在下面网站找到：" class="headerlink" title="注：更多核电主题图片可以在下面网站找到："></a><strong>注：更多核电主题图片可以在下面网站找到：</strong></h4><ul>
-<li><a href="https://www.vcg.com/creative-image/hedianzhan/">视觉中国</a></li>
-<li><a href="https://www.quanjing.com/category/12702301.html">全景图库</a></li>
-<li><a href="https://www.58pic.com/tupian/hedian.html">千图网</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>素材</category>
-      </categories>
-      <tags>
-        <tag>素材</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>虚拟机安装Debian以及配置SALOME教程</title>
-    <url>/Mrluo123.http-github.io/post/23422.html</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="9bc410bb7dd9ec0e43c4c2b23a15aee8729c849daba08057021de0ea562be842">4181f10c7c15e461887c19ff1613231b22aa4d85e140ea19953c563fcc668896f3a80b785891477e79ac7435d5f949ed808863d2da90b450e33ffb8f6344545bdc35d0ed41f3fae9fbdc51e36f2e7f0f29418675200a0abe50c932cc5e77553ff150e822684f6981af3b2d513c5d4840f8c43f47894c65b1f0ef68327d2b4979eaa987b89518e81539ed459b455adee1b339a2b15ebf94356060f5eeffdb7ab711316f59dac0ece67ff89a4367097f9a71cbbd5bb21c81cac3d29f00bca201651b5247f8aff682d9333bfd1f81401180e9c144e411750dc854f8bbf4bf6d4ff6bd90b340434311f1d7e934f75def6aa7e67cd29e69baf12e1d2b71e1f7977400a540b7a4f31018fa7d0c1e6aff64b8c716362a44d5e7a5f3a956dc620c6946351541a951df6d9d805ffc686198e1033e6d164df5afebefa255b4b7f843a42a2b3577a319c68d73afb431c62d01407fe1b4f027028833e1128dce17ce7a077ebb8e99a0497f079eb9bd017c2c0524383b1186142b0d6963dac8a146f93bca8e9013b1121ea7f1dac98bada68762a51facda7c16581fc84d4c1acc607abbdcea46493ee4eecb427b0f13fdfd104b6f6ee41b0bdf08754ab8a6f3f38743e03f0ed1becddab0ad9b86bbf2c9dbf5268bba22a98ca2d3262f5b8814d340e63a0029e7975f54a11a9a9e58f5fa0178f6ac6ff5ca7d21d9c11ca1e7e324528eed12ed02153a96d84d676b8793eb4f0d5b6e9f19234c996a007340a99b8e0af185705494f57b4dd81e7b00f96549dcda27cbb34b07ba48578c5056c4ccdef4e539d9fb1b9e18f061807bf454b964347febe76841dd367c89f509947ace167119c19f2e3595bec1b33b96879aafe30b6d1773712f7dfc15400161eea59aefd1264b66d52fca32c556dcd445bde6b7d8d6e3071e89507fd3de8ce435c7924c67a868c2ca3b5e1ab7d2aa301a83c1987895f7cce55491ffc56c3517f220d9a2f71dc3d71f7b9027c0441beee8c63b1fe7d6ca7ca76db9a61735c80504db3c29ebc9cc164d63f109b60f52125039d3c448865e4239510836a511ed09fe0d53583f34b8f3af14c263228e322e934fe9ad1cd366e6c89040a07ff1b2d7ad3097e1dabb60cfb211863f58ad3addd29662e736b0f9f133c00da6581acf9fe504559e72e42d8e8a3979d2f98b323149d6e46dbed587552fab9d38cfbcbefcaa1b23a6b4aaf90481f918ea2fa76794611be53d3dc7c19f17a6086fad2669e8ed9babab36f9c31835c8ce5940d0cb8e2fe52ccaaf552a97af0ba9dc7ca2e4b9c2bf75d8a3c9de6604cd9a3e9b6790a8e256d78303c7063e3e459f8615221982875b4c59f299c52dc3c70678d11583bcf96d1d7f22ffcea162c25705749bd026ea91f581dd8a6812415c1d3fb7468b2e850ed80a374e36a4c1c0e4ec9e3544ec225b658da33a0de2043730d4ad9df753da54f388860f107a0445b4c772638d86d3094440092fa240b411c290501bed3db4e72b5f3a82012c77e089a4ab69f5ddec0724e50f47026105e72033d14ad5124628f5382a0b09ca7e684c4dc022b5fc8955a451c6a9c323a558d0a114b804c2b4938b265ec5209938bf2cdc4749d5183a84ace401dbc2201aae09815b19c1a5efb102897fd63ed3d80392fcbf469e605095519124dbee9cf0aa4575d2cd44bc7e3c0ecbffc4fd7a053092be8ccd8f3122d2ffedd982eeedcb24e80c1d46478a01e69aad827e6f0520c0613f8d398aa7618ec85cffea924981215ba3ef6b710a0365673433563ef345dff6d7cae7103df12f8ebf57cdcec207ae708f4c12dcb2a41ee9cac17e8ce5f0a8e9dc1263c71935af3cd0841c7a8550e9fea53d4da42bd82383b08bf053cb4b0a263a10a0c53b3781c456d48ad18fa99fe2174232c07be59b5381c3c8b4635ef42e3aed24bd0ed2f9981fb5f9ae7984769dfd86d693d66b117ef91725492862cf98b2e6202bf9be8521544899ed3e4c4119f18e64630d8a0cd641439af8d249ad1b159d852b5cc0a65aee7abad513f579e6f98b1b9bf2a27c02a4e5d25b65233d43902ad20b2b242134a60dce4d768afe2e56608fad23b0ea950b26fb77c41d6ed41506f617ceef33f3f77bbb8b016e43647e3f41764704755ba8418eb77ca908a0a51a13b6584da196bf57d891fe1aed9ffaef5470e1eb3d957696f593e136899f65d476038f6e8f028f8f9c529b152fb7f425e1fedc78126a9ec89c0bffd00e791229e4423ee0896c18825e3c19b9f9baf181f51d5838d2ac13a3707790355d7e1fce9f82d419190b48ab4a07a247d11cea323b536469495ff1f3ab3b787b8c7832c38765069b127281d9646b9f037f02ef2c545921dd3280dce109298cea2ca0d5e8b9cebd7374b9325f8d1fc011c8d29ee6621b0b3e0ee5e5e07ccc8eab6cf3128183834559ae540596f9ab60030f478bcff63f6b0862e46af1f7867855003d60cf611a4d261969c500f84b0eb81fb4212daa55414d8bf7501c0012dd0b3398b91e1678c04fe52176ae52d08419b262eb6f675a11e34f5af3aa0d6e9f7963bd770bfeca5629d98406f2f5cd99e1c0d58fc027c91e03448b9285651119f4f50dbf43e2c7eae23d6df5d396695c6abec191f1fb3175c21a487a46ee8bc8317627a9cdb57aad6a6981b7212960d668fbb8b0c37698e901abea16d6f66726bdeb4660efeb517b9c028fb6e0120549556a6961d3d3cca09b9f4a0c004c8dcd813123c38c5c481dd29541b431820307788c2b0fd69a55678e8402917befcea0a26394d0640435966ef79a702cee24a6c1cb280dc50e95bfcca4011458e08968ea0db8c13492ee23649103bf78a98b67c7c05dddad21c2c24a994b11ff49187f943be72d8b4abad3e279a5d43976295d83eaab5a8ba3b53baab323019c4ec09bc7e0e4106a8d9f8635eb7bef853aff06aece8f5cd93aa6c9688cbac6f10fe86ac8278400e67acd10723a6946be1b56fc138db3dbcd12a3c3bfc85e0fd72ff0202c436e19939640b70d3f4dec391744d224a8f3042831e77de8a9f96b231c8de65c20e9081e1d148828a98a2e72bb2cd8cf081bb28017d53992ed13a431c875d8282c93a1efaf4c154cc4da67324445e96fe7d28bae4acfded880abf693205e1d4e9963f1c3732d4c8d1a41dc21a789952d3ea8b4146e18f8453e46c8c3f0f57b05d5385b027eaf19545eefaf6408480fd1bf3cae489f37003e99dbf48e9cac3b2e290dc17f6963319af2df9cfa1aea7c54e64487c11fd33e3c7858f4207c70cdc4d92033a79894d48e34ee98a1a1276703bdbc031eee2404bbc96968b92073d9d0f29ae79e3c7f5f514a8648594b0ce64d935da9701168a9927e350655ae8ec6ffeb00599be3c1bd38440cfc5ccc4e7985df99d492ed9bfd69422da039447fec046e94e3611290dcf02e2ac512725ff6ac0e2d8ec66d163344ac15d883e750c172a7162fc32814d8111abbcd4f2a95736e8f74967060fd053345b905cedf295b35ca4f971d9122575bb1dfebaa38c6d49bd3d5edaaa52fa5cb9b13936b2e528b421ff330ef809060789cf2d4f476bb2f4bc6cc0f7c6591d33d12b1a8eee0b00843a80a9cc7d2ba6223776512cd0ceee85ecd52726ea94680361110f21c0e8a9aecd3d0d274da3429b0e35c53442369c9ed7ac0f708ca304dd85d99230db51c187dd544ea80b0beb6831ccd247b759bc293a6cbc947cb4088df77560175cfcac019446bc0841483ca7f0fcc82cf5c9d3e0a1d9dfae650ea8ddbfbcb1875625dbfea33ecabd12f5d9c94f523ab3d377588ec5ee2ff78a1923c0342c85f85a683ba0eb85b9a9134e6fb398c896f5399edc1cfd560b95b466f36058efd508c8b190e2794d8beb703a62fa2f209a4ed8a73affc0e80dd7a900eeb26f56d9132685d1592d6062fde4a2fcc8ef72fc2b12d6c4695550a1b26f7d65aac84ae269189bf20dac5622845ebfcd17c2c5871e3f92dc593eacf35b792c2845f98cca7d3361613eb97fa0bfc1592a1ca147bb73041683521b73c9ca93a4111f8ecd3c59709b5f6a517376d1e2fed6e86cc65c80c5d1685f012c73be7b86d9d19454408c769616a1a5e89b61e2f1a1ef00139d76111ff3c4f658c61ede76e4104c65e5820700224e22171b4cb9e0f8679cc4b488d22b0240445494e88c83b6f7d377d8fdf1581648a243a04a5d108fa717e4d4ef8902eb91c5452d4f45278cec5da5619b8974d107e7c7eb7734d08e81dab96284639a93aa4416534af55c1d1f4d4b539bce99f52571d32b956d84103073b52402059aa65c1c07da88aababc4f64c2466f79cb5687517ad59a2ae14c0d7e48fe238caff06343ee312d0aeb272bbab6cdc254487c3525ee57a8e2abf304b80bdaa383404698b42efe2726c4d9bec32ff02c81ef3884204277b5b2142ba148ab8918094fdfb7691be73e9572f584618b0e3438937ee6b7255fa7b3eb461f88dc20c1a5e5907cacb3f40ddb29b93005203287b8aa92733510db260f77dc8fa7b801577b25c6eb506d2e868bd8123d70ebd815483c7d4c0be0c5a82d4e6bab0ebe7d223df3ad1aac66365e69560eee9aa028d37fa2c6e07afd3f9c069a453b021e9395ab02dcc41e0b84c44f425c737ad6f75802ce3919214f8cc6aed70c085992c73c18ed3375aa4533fce102fddb33ab4ac6cabb8b743b57e5d3282f0fddcaf75959f983944f39e6165463f2f36c068b62005d673fca9bedb960a890a05bc3ad29066de4d5af958837e4d8b7b3d7b22ad8137cb65d5db6b85ef42fd1ba8e91daebaa8afa8a25ec37f9bf6e76b619cd81004866c9ee15d14b766a71158f42dd9e05a9698a1722c1298f470e560a74d3bd5403b4055a9c284d6c5b0438f45ae47c784620c2baec27986136c5a0a7d3a2c798ac2b815ff73c631b2ff8ca14239958d7fc3ccbf739757d32669761a699d762711c1bebcabb9a390e36b404a585c3f8b15946af7d036abcf8f1f116fb37d8fd76b327ca39b545a07f0465d3da497c9bd44506938c2ed77cc1557d798f259379fede9a2fd401b03c7e1958293b356f7fd99458e289f0f3a8bd022e33e16f54809e608bcfe413eba23377c4079689ac1d16eed7c3ecf09c8c2cf13c91125375f1abfac504348bbd7d9caed660fe9a65d03d92c3e05f69e69968a75d2ee110bff3566633afc93b8a18e931fa1f3d8b4b9dff7c5d1e30775b569a3a3ab36e65b0f454bc3478c2b2d74e5595f18c1491a299abb5233b78f6041a34f549b48a28c186a5f800097347cae71616053a8d816ce5af273267e0e5d59beba799d57280f5ed6dc3381d94505d1cd20e4b6f87e4834807de7d4e4c860edfae20c8beef88c10b35444ebc1b795e5bc0c0c08405fc30368fb18dad2882a62ab01275ef37544f0c2fad16abfb169851818b6674c68c59f1fedac7a99b23939162c644dfca63896b1f6b23d2efffcfcffa69db6bb218a3be6a8762cabea6cc5a5f98f1cbca48c52550056e113c47b443f5e83796bb4a5f84e4e6a7c6cbfa88f4033f7b464a319d6e03db5465a9afe3601914af80583b80cdcaa8b64e49046e0e65bfc39c9e6362e7b223d9e64d8da2abeac72fd6f82a24f58a13301c0b71278427b6e78c63673b838192df8ba1deb9fecd0d624324614cb0747fe9a4964d8a90b2f0299c29a2aea08cf7558995855bd1638e897e178c7fa57a8245c2f415cc410f5fb76d5420d8e3c973b4b271d8120c58a7ecd47fbd4c8dc3b965689fc9dd06b9a40768de84d798bb32e9fc5039f8c13d219fb3c61faf4d023d2db76f9ce57d0b9589de1bce2b06887453dbdbfd31a31060087f6e55a0c9ac006f7acd5f84689fcabc6a1cfed6b60b7b90e451069b82a0639db8ff9100cfd7d4e2015962be5eafdff6d56fe6009531d2e0d4669a6421f53394cef95c1478d0d0d67020c85588e6e1a0b15313df9bcc5daeeccee9711aad771ab20a2591480ba414ec9ef160fd046b867e4334bdc9178a7d22a3e3dcc05f6b9f084f5309a135759213918a76a5ce20e1d8d0a715d5b30ab4b35cfd69a7b554181b1b2f38c69c2956a3178db5251efaee9984fa6c65879cdb09e937940bd77a719c9174fb15c2a13a009a0cbff90238563e5ef77fc50b55fe2f72506146f87d0f6299e2bdbd149bd849df92c2dc04ae04fa0e29fa01eed04d8a1482c010c4b7dc23f6c65be3b3799f6bf28967aa89c02a4a3c753b5a8375d24b56e82b8ec495f5554c14f6e9f451e9bbefd6e457db6be662598ed358c3bec5d37d0f4274b8c527ba99ad763248e9017d96b1e127c13a9ff9ae40c2a2deaec4eef597b90ff343bd73e176958691dac471587537ca6c53b169d9e2b8085c3b3c17e4f188731b351e10542b61b1e39ae42596b5cc3a4fc846355ccb5f34c164940a23b71196124d2f967cf8b81c7004f70eb63e169f96205e3cbe6aaf95af07a13c0f2e284beb4f5a11b365acc7de02489dd7942c208df13814e8ffd2125f991adc78ce5a42f5169b0e1770ce6f1876f8d66f823313700aad8f1ad4407b1625adf067188ba52617cb62617ffcb5ee5317c217a124be34633b9c607db06aa5d573946ce7b71ea8738587132884555c2bc1dd564e809218b096c3c891ccc34cb66bfa0ae9611087dbba02aed36db3e047a42388d2b8150b195335a554d0b4ea544cb20c17092c90536f9f498ebf524a4d21cad259d763273b8aa614cb13cd10959814dd862b660531ed9e2fed09ab6cfbbfbaf2aab59b77b8b330490607c849b1ecaa78555270e38eb5402fad419ad1171b3a4f263e2c92c8ccb8c36188e46bb11580b461c5d8cfcd96073d40eabdee0bd9075c7f085702a5f508177526197b5ba3cd3f41122f7f8ba23c56cc82a4e51bfc2c6ab4559fe8fdf998ce7cd4c41043aa2991d17815a2e0b3e2b2dd723af699ae94e222c1ae6cd1585448abe8817acd377394375c81103f40470ca8899555ee2e130788efac21cc02ab821d4e311b4556803e2bad282b9054f781be050d8e1fff6931b187724804139543ecae2892c01b675fe3f4e8f33310a1a03c68cb8ee26091d1204d105c388b12d23c2cad827985aff89deb8a5fe05cdfc246eb8c1c94db0d1e1e6290c9b737342f076be8e4606e6dd77c18d337a358adbdfdccc3d88fd7f4a9760e72d06f5ad087b2dee9fec5f6d1e30ca8ef18584dc107e118a9d77a45113465a750fb31da8cb4823bfc9033908c08a89df7115a4d49c64d96d3573d953d344275785420996371ed37c0291f460155942e7cbb1acb6786ee57b7386dfb0da67d4e47909e2bdb0032dd3525355c006411af37b752fbedc5f2ebcc95b9aed7c7608e03ed4f8b3ebd1d5d0180556397062ab7173f5b54bdb35e4046df6fa8feb188cc2a67d58d45cf5abfe9b2d145f09b1706f62211cef2f586fc2a3fb825b5f40bfeca1801d94d4b79d2d69ccda88092607ddf4af4c316cde1351555b3c55b88418adc444c4e76ad776c22d8e15033ac7de189602eb7132b80231722c9571af0ef38fa8b724f5c22dc30e7675e362fba6e9af5abd31b712211cc504029cd08019a0f84f6ce544560a39ff5de917979543cedbba62c7dcfe44bdee20d7947ea40590816a69a41119d05949ccde2a0bab54c449ef5aee052a786c8b8300adb0d824f5c24186772a8455e51b96507788a6f5dbd635d33fec9c79ebbdd29f057dbc6668b06b70071939d40926011c2b55a227764bf701a44fae39efc452a9f51484d9ec4482a3713e01c059e2fb9a6379e6e562f2bc34aec7faaa0946f633af80cae568dcdf3d001c169b8e7b7f1fed838d0348b5176d84dfe29055889712338e7d3f148f2ffae3af7d1ddd6f4d5a714e88d36349f404ff2d188c50892255a7d2783a32f4f2360baef28bf375d49b32514b54d1bdce569e0330ca17890fa749813a353caa7a328780f3623c42c6701004d790efac221cf375ba1122da9a66003c803f1c3418af56a68b3fb5ff1fb7184b34b10440a8e631276ac9f8309a1e0e851446ac80ad1b2e1ed32a45c602ccc769966f0065d4af328e2aa353f6e0c48a4b9919f936ac4423bca38f0685aa2e269c431900bb7ca0fdbf5f18de905c0d1146a0b6accaafe51370ccef1675021080190a2249d298543a08826fc53a8e6f8504c141a2750bdf8ae21277cc30107972f0852aa0689652f8ed1d6ba4673b6bf1b40d4b28c020de43ed4ec12e769382c23919d5c1474373edb3d67abcf6a396a7755550433ee90ef85989a4c46532b72b5c1375dd0f1500cecbf30a0405180c0dceea51517050ac1563c6cc3918e6d6033f4065989ee7be7f88cfd1278f9998c983a38d18eac3d05e2d5a9c17373cb469702a51bdb914bf3c160adc85a037c8aa9a2c9c6f8ac14977fbc3069eaae621d6744f3bb817d241ae7a3741b15f0eeb5059937a6918e7fb1d6bd6916a61438adfb3c22aa2bfabd63e95f41eafe2e4d3666aa234f19781fa5d7d2a033d0fef9e594ebfca3aa6b53b020c7cbf70ca743de3583c5cd83c8b3d8d94a93f55dc8745fa42edac601108b56307c91f26b5502b2e0c2939ad922f66f4435f442872e0b9a486355b50ad097c4832ebad23778653af165f390f27b31861e2d70b431c971184bcc2a3550403fcc9a7d905ce4c0dae87c727710997785378387c2be4cbd5740185cf2bb2e7810baa33d28d58d87cd5203290f620c9dfac6cc0a3662947081f688259e96e4dbfc5ba9a1c927709c126b520eca798d1b42eb190d398420ce8bf7ed325735fbe1fe74ae0ac2a96926472472ad93ae96bc39421d5c8db63e7d690ee2c7d086e4fa341b51813633759da2f161654fbefa8858ddac2da8cca76be89e0e27e51fa7aac2919684076413d98bddc2dc4337c8a61615452a5c1fc444d1a3a38baf4efdccd620157a956417343260f56810e5437dfe466586e83142054f31805bc20e7db92ba8b728847d0d70d62357e46a2ffb67c0a612b7fc125a0a079470105079ba681711b90a712f29c02614a0ba85400f187c702e462f4daba647317e9429c843123a22ca29ff738cd402979e04c897e8d18b7af3cab7cdf0339ac65c8a6372a62844cc583d2a267ed88fe9521c0a3e28a1bb3fb7c57381bf6f1a354e31835238b9eec033641bb8bcaabd085360a22d1c0</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 请在这里键入本文的阅览密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/Mrluo123.http-github.io/lib/hbe.js"></script><link href="/Mrluo123.http-github.io/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>SALOME</tag>
-        <tag>虚拟机</tag>
       </tags>
   </entry>
   <entry>
