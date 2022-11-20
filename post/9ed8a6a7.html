@@ -31,7 +31,7 @@
 
     <script src="/Mrluo123.http-github.io/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/Mrluo123.http-github.io/atom.xml" title="Xiao Luo" type="application/atom+xml">
 <link rel="stylesheet" href="/Mrluo123.http-github.io/css/prism-tomorrow.css" type="text/css"></head>
@@ -333,14 +333,14 @@
 
 
 <p>显然，对稀疏矩阵中的非零项进行存储对计算机内存是极大的浪费，因为这些非零项的信息对求解毫无意义，因此在实际操作中往往采用矩阵存储压缩技术，存储稀疏矩阵时常用的有如下三种压缩格式:</p>
-<h2 id="Coordinate-COO-三元组"><a href="#Coordinate-COO-三元组" class="headerlink" title="Coordinate(COO)/三元组"></a>Coordinate(COO)/三元组</h2><img src="/Mrluo123.http-github.io/post/9ed8a6a7/coo.gif" class="" width="600" height="600">
+<h2 id="Coordinate-COO-x2F-三元组"><a href="#Coordinate-COO-x2F-三元组" class="headerlink" title="Coordinate(COO)/三元组"></a>Coordinate(COO)/三元组</h2><img src="/Mrluo123.http-github.io/post/9ed8a6a7/coo.gif" class="" width="600" height="600">
 
 <p>这种存储格式比较简单易懂，每一个元素需要用一个三元组来表示，分别是（行号，列号，数值），对应上图右边的一列。这种方式简单，但是记录单信息多（行列），每个三元组自己可以定位，因此空间不是最优的。</p>
 <p>常用的开源矩阵求解库Eigen中的<a target="_blank" rel="noopener" href="https://eigen.tuxfamily.org/dox/classEigen_1_1Triplet.html">Triplet</a>就对应这一操作。</p>
-<h2 id="Compressed-Sparse-Row-CSR-行优先"><a href="#Compressed-Sparse-Row-CSR-行优先" class="headerlink" title="Compressed Sparse Row (CSR)/行优先"></a>Compressed Sparse Row (CSR)/行优先</h2><img src="/Mrluo123.http-github.io/post/9ed8a6a7/csr.gif" class="" width="600" height="600">
+<h2 id="Compressed-Sparse-Row-CSR-x2F-行优先"><a href="#Compressed-Sparse-Row-CSR-x2F-行优先" class="headerlink" title="Compressed Sparse Row (CSR)/行优先"></a>Compressed Sparse Row (CSR)/行优先</h2><img src="/Mrluo123.http-github.io/post/9ed8a6a7/csr.gif" class="" width="600" height="600">
 
 <p>这是经常用的一种，我们会经常在一些标准的线性代数库或者数值运算库中看到此方式存储；CSR是比较标准的一种，也需要三类数据来表达：数值，列号，以及行偏移。CSR不是三元组，而是整体的编码方式。数值和列号与COO一致，表示一个元素以及其列号，行偏移表示某一行的第一个元素在values里面的起始偏移位置。</p>
-<h3 id="Compressed-Sparse-Column-CSC-列优先"><a href="#Compressed-Sparse-Column-CSC-列优先" class="headerlink" title="Compressed Sparse Column (CSC)/列优先"></a>Compressed Sparse Column (CSC)/列优先</h3><img src="/Mrluo123.http-github.io/post/9ed8a6a7/csc.gif" class="" width="600" height="600">
+<h3 id="Compressed-Sparse-Column-CSC-x2F-列优先"><a href="#Compressed-Sparse-Column-CSC-x2F-列优先" class="headerlink" title="Compressed Sparse Column (CSC)/列优先"></a>Compressed Sparse Column (CSC)/列优先</h3><img src="/Mrluo123.http-github.io/post/9ed8a6a7/csc.gif" class="" width="600" height="600">
 
 <p>CSR是按行来存储一个稀疏矩阵的，其原理与CSC类似。indptr中的数据表示矩阵中每一行的数据在data中开始和结束的索引，而indices中的数据表示所对应的在data中的数据在矩阵中其所在行的所在列数。可以看出，在indptr、indices和data三个数组相同的情况下，通过CSC和CSR分别表示出来的矩阵互为转置关系。</p>
 <p>注：上述图片来自<a target="_blank" rel="noopener" href="https://matteding.github.io/">Matt Eding</a>的个人博客，更多矩阵压缩方法可参考<a target="_blank" rel="noopener" href="https://matteding.github.io/2019/04/25/sparse-matrices/">Matt Eding’s Blog</a>或<a target="_blank" rel="noopener" href="https://docs.nvidia.com/cuda/pdf/CUSPARSE_Library.pdf">CUDA手册</a>。</p>

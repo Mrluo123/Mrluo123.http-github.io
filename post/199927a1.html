@@ -31,7 +31,7 @@
 
     <script src="/Mrluo123.http-github.io/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/Mrluo123.http-github.io/atom.xml" title="Xiao Luo" type="application/atom+xml">
 <link rel="stylesheet" href="/Mrluo123.http-github.io/css/prism-tomorrow.css" type="text/css"></head>
@@ -302,7 +302,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    528
+                    532
                 </div>
                 
 
@@ -343,29 +343,39 @@
 </ul>
 </blockquote>
 <h2 id="1-安装步骤"><a href="#1-安装步骤" class="headerlink" title="1. 安装步骤"></a>1. 安装步骤</h2><ol>
-<li>Add GPG Key on Ubuntu 20.04<pre class=" language-shell"><code class="language-shell">sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
+<li>Add GPG Key on Ubuntu 20.04</li>
+</ol>
+<pre class=" language-shell"><code class="language-shell">sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
 </code></pre>
-</li>
-<li>Add CUDA Toolkit Repository<pre class=" language-shell"><code class="language-shell">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
+<ol start="2">
+<li>Add CUDA Toolkit Repository</li>
+</ol>
+<pre class=" language-shell"><code class="language-shell">wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin
 sudo mv cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
 #Add the repository
 sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/ /"
 </code></pre>
-</li>
-<li>Run APT Update<pre class=" language-shell"><code class="language-shell">sudo apt-get update
+<ol start="3">
+<li>Run APT Update</li>
+</ol>
+<pre class=" language-shell"><code class="language-shell">sudo apt-get update
 </code></pre>
-</li>
-<li>Install Nvidia CUDA on Ubuntu 20.04<pre class=" language-shell"><code class="language-shell">sudo apt install cuda
+<ol start="4">
+<li>Install Nvidia CUDA on Ubuntu 20.04</li>
+</ol>
+<pre class=" language-shell"><code class="language-shell">sudo apt install cuda
 #Add the CUDA installed folder in your system path
 echo 'export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}' >> ~/.bashrc
 source ~/.bashrc
 #check the version
 nvcc --version
 </code></pre>
-<h2 id="2-运行你的第一个CUDA程序-HelloWorld"><a href="#2-运行你的第一个CUDA程序-HelloWorld" class="headerlink" title="2. 运行你的第一个CUDA程序-HelloWorld"></a>2. 运行你的第一个CUDA程序-HelloWorld</h2></li>
-<li>Here is the sample of CUDA C code to create your first program:<pre class=" language-shell"><code class="language-shell">gedit helloworld.cu
+<h2 id="2-运行你的第一个CUDA程序-HelloWorld"><a href="#2-运行你的第一个CUDA程序-HelloWorld" class="headerlink" title="2. 运行你的第一个CUDA程序-HelloWorld"></a>2. 运行你的第一个CUDA程序-HelloWorld</h2><ol>
+<li>Here is the sample of CUDA C code to create your first program:</li>
+</ol>
+<pre class=" language-shell"><code class="language-shell">gedit helloworld.cu
 </code></pre>
-</li>
+<ol start="2">
 <li>Paste the following code in the file:</li>
 </ol>
 <pre class=" language-C++"><code class="language-C++">#include <stdio.h>
@@ -403,15 +413,17 @@ free(y);
 }
 </code></pre>
 <ol start="3">
-<li><p>Compile your program</p>
+<li>Compile your program</li>
+</ol>
 <pre class=" language-shell"><code class="language-shell">nvcc -o mycuda helloworld.cu
 </code></pre>
-</li>
-<li><p>Run your CUDA program</p>
+<ol start="4">
+<li>Run your CUDA program</li>
+</ol>
 <pre class=" language-shell"><code class="language-shell">./mycuda
 </code></pre>
-<img src="/Mrluo123.http-github.io/post/199927a1/1.png" class=""></li>
-</ol>
+<img src="/Mrluo123.http-github.io/post/199927a1/1.png" class="">
+
 <h2 id="3-更多教程"><a href="#3-更多教程" class="headerlink" title="3. 更多教程"></a>3. 更多教程</h2><ul>
 <li>NVIDIA CUDA C++ Programming Guide：</li>
 <li><a target="_blank" rel="noopener" href="https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html">https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html</a></li>
