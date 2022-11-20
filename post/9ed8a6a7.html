@@ -122,6 +122,42 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Mrluo123.http-github.io/tools" class="waves-effect waves-light">
+      
+      <i class="fas fa-toolbox" style="zoom: 0.6;"></i>
+      
+      <span>工具箱</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/Mrluo123.http-github.io/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -212,6 +248,42 @@
           
         </li>
         
+        <li class="m-nav-item">
+	  
+		<a href="/Mrluo123.http-github.io/tools" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-toolbox"></i>
+			
+			工具箱
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/Mrluo123.http-github.io/books " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
         
     </ul>
 </div>
@@ -243,10 +315,104 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/Mrluo123.http-github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -295,14 +461,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-06
+                    2022-11-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    608
+                    605
                 </div>
                 
 
@@ -329,18 +495,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是稀疏矩阵？为何要压缩？"><a href="#什么是稀疏矩阵？为何要压缩？" class="headerlink" title="什么是稀疏矩阵？为何要压缩？"></a>什么是稀疏矩阵？为何要压缩？</h2><p>在科学计算中，经常面临大量的线性稀疏矩阵方程组求解。所谓稀疏矩阵，即元素大部分是0的矩阵(有些资料定义非零元素不超过5%的矩阵，为稀疏矩阵，如下图所示为稀疏矩阵和稠密矩阵的示意图), 矩阵的稀疏性可以用一个分数来量化，即矩阵中零元素的个数除以矩阵中元素的总数。</p>
+                <h2 id="什么是稀疏矩阵？"><a href="#什么是稀疏矩阵？" class="headerlink" title="什么是稀疏矩阵？"></a>什么是稀疏矩阵？</h2><p>在科学计算中，经常面临大量的线性稀疏矩阵方程组求解。所谓稀疏矩阵，即元素大部分是0的矩阵(有些资料定义非零元素不超过5%的矩阵，为稀疏矩阵，如下图所示为稀疏矩阵和稠密矩阵的示意图), 矩阵的稀疏性可以用一个分数来量化，即矩阵中零元素的个数除以矩阵中元素的总数。</p>
 
 
-<p>显然，对稀疏矩阵中的非零项进行存储对计算机内存是极大的浪费，因为这些非零项的信息对求解毫无意义，因此在实际操作中往往采用矩阵存储压缩技术，存储稀疏矩阵时常用的有如下三种压缩格式:</p>
-<h2 id="Coordinate-COO-x2F-三元组"><a href="#Coordinate-COO-x2F-三元组" class="headerlink" title="Coordinate(COO)/三元组"></a>Coordinate(COO)/三元组</h2><img src="/Mrluo123.http-github.io/post/9ed8a6a7/coo.gif" class="" width="600" height="600">
+
+
+<h2 id="为何要压缩？"><a href="#为何要压缩？" class="headerlink" title="为何要压缩？"></a>为何要压缩？</h2><p>显然，对稀疏矩阵中的非零项进行存储对计算机内存是极大的浪费，因为这些非零项的信息对求解毫无意义，因此在实际操作中往往采用矩阵存储压缩技术。</p>
+<h2 id="常见的稀疏矩阵存储压缩格式"><a href="#常见的稀疏矩阵存储压缩格式" class="headerlink" title="常见的稀疏矩阵存储压缩格式"></a>常见的稀疏矩阵存储压缩格式</h2><h3 id="1-Coordinate-COO-x2F-三元组"><a href="#1-Coordinate-COO-x2F-三元组" class="headerlink" title="(1) Coordinate(COO)/三元组"></a>(1) Coordinate(COO)/三元组</h3><img src="/Mrluo123.http-github.io/post/9ed8a6a7/coo.gif" class="" width="600" height="600">
 
 <p>这种存储格式比较简单易懂，每一个元素需要用一个三元组来表示，分别是（行号，列号，数值），对应上图右边的一列。这种方式简单，但是记录单信息多（行列），每个三元组自己可以定位，因此空间不是最优的。</p>
 <p>常用的开源矩阵求解库Eigen中的<a target="_blank" rel="noopener" href="https://eigen.tuxfamily.org/dox/classEigen_1_1Triplet.html">Triplet</a>就对应这一操作。</p>
-<h2 id="Compressed-Sparse-Row-CSR-x2F-行优先"><a href="#Compressed-Sparse-Row-CSR-x2F-行优先" class="headerlink" title="Compressed Sparse Row (CSR)/行优先"></a>Compressed Sparse Row (CSR)/行优先</h2><img src="/Mrluo123.http-github.io/post/9ed8a6a7/csr.gif" class="" width="600" height="600">
+<h3 id="2-Compressed-Sparse-Row-CSR-x2F-行优先"><a href="#2-Compressed-Sparse-Row-CSR-x2F-行优先" class="headerlink" title="(2) Compressed Sparse Row (CSR)/行优先"></a>(2) Compressed Sparse Row (CSR)/行优先</h3><img src="/Mrluo123.http-github.io/post/9ed8a6a7/csr.gif" class="" width="600" height="600">
 
 <p>这是经常用的一种，我们会经常在一些标准的线性代数库或者数值运算库中看到此方式存储；CSR是比较标准的一种，也需要三类数据来表达：数值，列号，以及行偏移。CSR不是三元组，而是整体的编码方式。数值和列号与COO一致，表示一个元素以及其列号，行偏移表示某一行的第一个元素在values里面的起始偏移位置。</p>
-<h3 id="Compressed-Sparse-Column-CSC-x2F-列优先"><a href="#Compressed-Sparse-Column-CSC-x2F-列优先" class="headerlink" title="Compressed Sparse Column (CSC)/列优先"></a>Compressed Sparse Column (CSC)/列优先</h3><img src="/Mrluo123.http-github.io/post/9ed8a6a7/csc.gif" class="" width="600" height="600">
+<h3 id="3-Compressed-Sparse-Column-CSC-x2F-列优先"><a href="#3-Compressed-Sparse-Column-CSC-x2F-列优先" class="headerlink" title="(3) Compressed Sparse Column (CSC)/列优先"></a>(3) Compressed Sparse Column (CSC)/列优先</h3><img src="/Mrluo123.http-github.io/post/9ed8a6a7/csc.gif" class="" width="600" height="600">
 
 <p>CSR是按行来存储一个稀疏矩阵的，其原理与CSC类似。indptr中的数据表示矩阵中每一行的数据在data中开始和结束的索引，而indices中的数据表示所对应的在data中的数据在矩阵中其所在行的所在列数。可以看出，在indptr、indices和data三个数组相同的情况下，通过CSC和CSR分别表示出来的矩阵互为转置关系。</p>
 <p>注：上述图片来自<a target="_blank" rel="noopener" href="https://matteding.github.io/">Matt Eding</a>的个人博客，更多矩阵压缩方法可参考<a target="_blank" rel="noopener" href="https://matteding.github.io/2019/04/25/sparse-matrices/">Matt Eding’s Blog</a>或<a target="_blank" rel="noopener" href="https://docs.nvidia.com/cuda/pdf/CUSPARSE_Library.pdf">CUDA手册</a>。</p>
@@ -715,6 +883,100 @@
 
 <script type="text/javascript" src="/Mrluo123.http-github.io/libs/codeBlock/codeShrink.js"></script>
 
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/Mrluo123.http-github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
 
     
 
