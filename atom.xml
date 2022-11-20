@@ -6,7 +6,7 @@
   <link href="https://mrluo123.github.io/Mrluo123.http-github.io/atom.xml" rel="self"/>
   
   <link href="https://mrluo123.github.io/Mrluo123.http-github.io/"/>
-  <updated>2022-11-19T18:14:25.964Z</updated>
+  <updated>2022-11-20T17:08:30.835Z</updated>
   <id>https://mrluo123.github.io/Mrluo123.http-github.io/</id>
   
   <author>
@@ -21,10 +21,20 @@
     <link href="https://mrluo123.github.io/Mrluo123.http-github.io/post/1b933ad6.html"/>
     <id>https://mrluo123.github.io/Mrluo123.http-github.io/post/1b933ad6.html</id>
     <published>2022-11-19T10:40:45.000Z</published>
-    <updated>2022-11-19T18:14:25.964Z</updated>
+    <updated>2022-11-20T17:08:30.835Z</updated>
     
     
-    <summary type="html">本文被加密了, 请输入密码查看.</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/Mrluo123.http-github.io/post/1b933ad6/reactor.gif&quot; class=&quot;&quot; width=&quot;800&quot; height=&quot;800&quot; title=&quot;石墨慢化反应堆示意图&quot;&gt;
+
+
+
+&lt;img</summary>
+        
+      
     
     
     
@@ -225,9 +235,9 @@
     <category term="并行计算" scheme="https://mrluo123.github.io/Mrluo123.http-github.io/categories/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/"/>
     
     
-    <category term="OpenMP" scheme="https://mrluo123.github.io/Mrluo123.http-github.io/tags/OpenMP/"/>
-    
     <category term="C++" scheme="https://mrluo123.github.io/Mrluo123.http-github.io/tags/C/"/>
+    
+    <category term="OpenMP" scheme="https://mrluo123.github.io/Mrluo123.http-github.io/tags/OpenMP/"/>
     
   </entry>
   

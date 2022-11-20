@@ -207,6 +207,53 @@ free(y);
       </tags>
   </entry>
   <entry>
+    <title>一个例子告诉你C++引用和指针的区别</title>
+    <url>/Mrluo123.http-github.io/post/36765.html</url>
+    <content><![CDATA[<h4 id="C-引用vs指针"><a href="#C-引用vs指针" class="headerlink" title="C++引用vs指针"></a>C++引用vs指针</h4><p>引用很容易和指针混淆，他们之间有三个主要的不同：</p>
+<ul>
+<li>不存在空引用。引用必须连接到一块合法的内存。</li>
+<li>一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。</li>
+<li>引用必须在创建时被初始化。指针可以在任何时间被初始化。<span id="more"></span>
+例如：</li>
+</ul>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span><span class="token operator">&amp;</span> r<span class="token operator">=</span>i<span class="token punctuation">;</span>
+<span class="token keyword">double</span> <span class="token operator">&amp;</span>s<span class="token operator">=</span>d
+</code></pre>
+<p>第一个声明可以读作“r是一个初始化为i的整型引用”，</p>
+<p>第二个声明可以读作：“s是一个初始化为d的double型引用”</p>
+<p>此外，通过一个例子就可以发现：</p>
+<p>引用者的内容和内存都和被引用者保持一致。而赋值的话不是这样，只是内容相等，会另开辟一个内存地址来存储。</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">"pch.h"</span></span><span class="token comment" spellcheck="true">//预编译头文件一定要放在最后面</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> b <span class="token operator">=</span> <span class="token number">1.234</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">&amp;</span> c <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> c1 <span class="token operator">=</span> a<span class="token punctuation">;</span>
+    <span class="token keyword">float</span><span class="token operator">&amp;</span> d <span class="token operator">=</span> b<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的值等于"</span> <span class="token operator">&lt;&lt;</span> c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"a的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>a <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//&amp;为取地址符</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c1的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c1<span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"d的值等于"</span> <span class="token operator">&lt;&lt;</span> d <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>结果：</p>
+<p> c的值等于1<br>​ a的内存地址为0104FC38<br>​ c的内存地址为0104FC38<br>​ c1的内存地址为0104FC14<br>​ d的值等于1.234</p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用OpenMP进行C++并行编程的一些心得</title>
     <url>/Mrluo123.http-github.io/post/11326.html</url>
     <content><![CDATA[<p>最近在编程时，由于涉及到大量for循环等遍历计算，需要了解并行编程知识，于是看了下OpenMP的相关教程；</p>
@@ -307,55 +354,8 @@ int main(int argc, char **argv) {
         <category>并行计算</category>
       </categories>
       <tags>
+        <tag>C++</tag>
         <tag>OpenMP</tag>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个例子告诉你C++引用和指针的区别</title>
-    <url>/Mrluo123.http-github.io/post/36765.html</url>
-    <content><![CDATA[<h4 id="C-引用vs指针"><a href="#C-引用vs指针" class="headerlink" title="C++引用vs指针"></a>C++引用vs指针</h4><p>引用很容易和指针混淆，他们之间有三个主要的不同：</p>
-<ul>
-<li>不存在空引用。引用必须连接到一块合法的内存。</li>
-<li>一旦引用被初始化为一个对象，就不能被指向到另一个对象。指针可以在任何时候指向到另一个对象。</li>
-<li>引用必须在创建时被初始化。指针可以在任何时间被初始化。<span id="more"></span>
-例如：</li>
-</ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span><span class="token operator">&amp;</span> r<span class="token operator">=</span>i<span class="token punctuation">;</span>
-<span class="token keyword">double</span> <span class="token operator">&amp;</span>s<span class="token operator">=</span>d
-</code></pre>
-<p>第一个声明可以读作“r是一个初始化为i的整型引用”，</p>
-<p>第二个声明可以读作：“s是一个初始化为d的double型引用”</p>
-<p>此外，通过一个例子就可以发现：</p>
-<p>引用者的内容和内存都和被引用者保持一致。而赋值的话不是这样，只是内容相等，会另开辟一个内存地址来存储。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">"pch.h"</span></span><span class="token comment" spellcheck="true">//预编译头文件一定要放在最后面</span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">float</span> b <span class="token operator">=</span> <span class="token number">1.234</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span><span class="token operator">&amp;</span> c <span class="token operator">=</span> a<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> c1 <span class="token operator">=</span> a<span class="token punctuation">;</span>
-    <span class="token keyword">float</span><span class="token operator">&amp;</span> d <span class="token operator">=</span> b<span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的值等于"</span> <span class="token operator">&lt;&lt;</span> c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"a的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>a <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//&amp;为取地址符</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"c1的内存地址为"</span> <span class="token operator">&lt;&lt;</span> <span class="token operator">&amp;</span>c1<span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"d的值等于"</span> <span class="token operator">&lt;&lt;</span> d <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>结果：</p>
-<p> c的值等于1<br>​ a的内存地址为0104FC38<br>​ c的内存地址为0104FC38<br>​ c1的内存地址为0104FC14<br>​ d的值等于1.234</p>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -551,18 +551,18 @@ int main(int argc, char** argv) {
   <entry>
     <title>核工高清素材图(长期更新中)</title>
     <url>/Mrluo123.http-github.io/post/1b933ad6.html</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="1babb0b1c7da852e222927d0ef2be38797cdb0046dad25dd46ee014965323386">4181f10c7c15e461887c19ff1613231be1a5ecacd740d4740771096fe153c173c89c303b65c70511c3eefcbe9cd9eb5912e96cb31b1810a6a5dcbf816ebb9a321340e66fa634d72b0851dd2a427a0ca4e738e2800aa739951d59284060c70889065bbb2f5b1005ec416b76b1e80a137b32c63a612a9dd4f6d6ba4848731ddcbf0adb60016cd1c7c08acaed0cfbc7ac77da4b23920d04361c1d96e28c47c835fbcd43e29d245a11cdf54a3ca635dcee40209c392211884787071453cf4f2863ccb3995f4c0437d36e7d0023fbcd4ef0d100d31ca1457d290703472350c4ae2d3ff5ba2a1ecc4e1f7b8421901a3e720509b48de566e718a391572c88fa6c73a79c986bafbffbf47b8c5a62364c44a4048ca668aef69baba2d9f15c9995b05fbcccb79d29978f2b406358ba5a22951340c0ca99327e0d631d27a4c2cc2a36f07f29e5ad8ed3e8b86b76842401544405e3054e5612ec82a34c405f5c3d8e349e3533b0c336a6931a8b7e621c4b597fa1367bf6f6bccc6bc454ec2f799b2d93421fc77d0e6e5aa850edc144247c7f3c5ca0d726079a1e86b4a5bbc94f65346365fd02c0d06e2093f1fd3587c10e2df2bf6fb950e6a698b5cfc28b1e0ce0ce579b2b3111744b4a896fd4a077c58c565bfbf2c77accfddf1ff4ea1f9d920eac373be0f3d72d258b5e967dbdae1787e2b14702bb1fc129477c4c656ae1c9379fa27ab848651348fdb007b53d2d0fa4fda26cd7065b25e409f15faee148c3eb888b8680bcc50490190548b6bdc6b49e14155e770c6ed0e7851cc7325d5188f3b5a822dce4cacc35af331eb81d67c22f3573a3224385893ce4083ba1dfcf5204f71704ad5ffd30a4c9ab0cd53a0631cb61ffced829e0ff6846f92afa36cc5e00184bedf25df0d8c093b0218d0f553b32bc7cc889e8c89ae5b1127d76d4f617f6466c75746bcce28277b52c59042cadcb8ea7aa073446d742783200c37006384774487221e7d07df8ad2b4e1dabe5696a679ddf35162d4d170dce2ecde3ec10cbaeccba5f7f1bf45740af31adcdab82cd3b767bacc3d7aaf441d38530a4903fb0b045ca5e52</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 请在这里键入本文的阅览密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/Mrluo123.http-github.io/lib/hbe.js"></script><link href="/Mrluo123.http-github.io/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <content><![CDATA[<img src="/Mrluo123.http-github.io/post/1b933ad6/reactor.gif" class="" width="800" height="800" title="石墨慢化反应堆示意图">
+
+
+
+<img src="/Mrluo123.http-github.io/post/1b933ad6/87b4-hwzkfpu2822108.jpg" class="" width="800" height="800" title="大亚湾核电站">
+
+<h4 id="注：更多核电主题图片可以在下面网站找到："><a href="#注：更多核电主题图片可以在下面网站找到：" class="headerlink" title="注：更多核电主题图片可以在下面网站找到："></a><strong>注：更多核电主题图片可以在下面网站找到：</strong></h4><ul>
+<li><a href="https://www.vcg.com/creative-image/hedianzhan/">视觉中国</a></li>
+<li><a href="https://www.quanjing.com/category/12702301.html">全景图库</a></li>
+<li><a href="https://www.58pic.com/tupian/hedian.html">千图网</a></li>
+</ul>
+]]></content>
       <categories>
         <category>素材</category>
       </categories>
